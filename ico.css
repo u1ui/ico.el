@@ -1,0 +1,61 @@
+html {
+  --u1-ico-font:"Material Icons";
+}
+u1-ico {
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased; /* Support for all WebKit browsers. */
+  text-rendering: optimizeLegibility; /* Support for Safari and Chrome. */
+  -moz-osx-font-smoothing: grayscale; /* Support for Firefox. */
+  font-feature-settings: 'liga'; /* Support for IE. */
+  font-family: var(--u1-ico-font) !important;
+
+  /* ok? */
+  display: inline-block; /* inline-flex has an other baseline? */
+  text-align:center;
+  font-size: 1.5rem; /* 24px Preferred icon size, material-icons */
+  /* overflow:hidden
+    + prevents layout-shift on font load.
+    - But baseline gets to the box instead of the text.
+    - Some Icons on some Fonts may get cuted?
+  */
+  overflow:hidden;
+}
+
+u1-ico[icon]::after { /* todo if supported: :where([icon]::after) { */
+    content:attr(icon);
+}
+
+/* BETA! */
+/* inline */
+u1-ico[inline] {
+  overflow:visible;
+  font-size:1em; /* reset font to 1em instead of 1.5rem */
+  vertical-align: text-bottom;
+  xwidth:1em;
+}
+
+/* js | better generate in js? *
+html.u1-ico-js u1-ico { width:1em; }
+html.u1-ico-ready u1-ico { width: auto; }
+
+u1-ico[failed] {
+  overflow:visible;
+  width:auto;
+  --u1-ico-font:initial;
+  xxxfont-family:inherit;
+}
+
+/* USEFUL? */
+/* theming *
+u1-ico {
+  color: var(--u1-ico-color);
+  font-size:var(--u1-ico-size):
+  xoverflow: hidden;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>u1-ico Test</title>
+        <link rel="stylesheet" href="../fonts.css">
+        <link rel="stylesheet" href="../ico.css">
+        <link rel="stylesheet" href="./util.css">
+        <script type=module src="../ico.js"></script>
+        <script type=module src="./util.js"></script>
+<body>
+
+<label>
+    Change Color <input id=colorChooser name=y type=color oninput="document.documentElement.style.color=this.value">
+</label>
+<script>
+colorChooser.addEventListener('input',function(){
+    console.log(e)
+    document.documentElement.style.color = this.value;
+})
+</script>
+
+
+<h2>LigatureSymbols</h2>
+<div style="--u1-ico-font:'LigatureSymbols'">
+    <div style="display:flex; flex-wrap:wrap; gap:.2rem" id=lsView>
+        <script type=module>
+            ligaturesFromFamily('LigatureSymbols').then(function(ligas){
+                var str = '';
+                for (let icon of Object.keys(ligas)) {
+                    str += '<div style="text-align:center"><u1-ico>'+icon+'</u1-ico><div style="font-size:12px">'+icon+'</div></div>';
+                }
+                lsView.innerHTML = str;
+            });
+        </script>
+        <script>
+            for (let icon of 'twitter,youtube,copy,not_found'.split(',')) {
+                document.write('<div style="text-align:center"><u1-ico>'+icon+'</u1-ico><div style="font-size:12px">'+icon+'</div></div>');
+            }
+        </script>
+    </div>
+</div>
+
+<h2>Material Icons</h2>
+<div style="--u1-ico-font:'Material Icons'">
+    <select onchange="this.parentNode.style.setProperty('--u1-ico-font',this.value)">
+        <option value="Material Icons">--u1-ico-font:'Material Icons'</option>
+        <option value="Material Icons Outlined">--u1-ico-font:'Material Icons Outlined'</option>
+        <option value="Material Icons Round">--u1-ico-font:'Material Icons Round'</option>
+        <option value="Material Icons Sharp">--u1-ico-font:'Material Icons Sharp'</option>
+        <option value="Material Icons Two Tone">--u1-ico-font:'Material Icons Two Tone'</option>
+    </select><br>
+    <div style="display:flex; flex-wrap:wrap; gap:.2rem" id=materialView>
+        <script type=module>
+            /*
+            ligaturesFromFamily('Material Icons').then(function(ligas){
+                var str = '';
+                for (let icon of Object.keys(ligas)) {
+                    str += '<u1-ico title="'+icon+'">'+icon+'</u1-ico>';
+                }
+                materialView.innerHTML = str;
+            });
+            */
+        </script>
+        <script>
+            for (let icon of 'star,add,clear,call,snowboarding,not_found'.split(',')) {
+                document.write('<div style="text-align:center"><u1-ico>'+icon+'</u1-ico><div style="font-size:12px">'+icon+'</div></div>');
+            }
+        </script>
+    </div>
+</div>
+
+<h2>Remixicon Font</h2>
+<div style="--u1-ico-font:'RemixOutlined'">
+    <div style="display:flex; flex-wrap:wrap; gap:.2rem" id=remixView>
+        <script type=module>
+            ligaturesFromFamily('RemixOutlined').then(function(ligas){
+                var str = '';
+                for (let icon of Object.keys(ligas)) {
+                    str += '<u1-ico title="'+icon+'">'+icon+'</u1-ico>';
+                }
+                remixView.innerHTML = str;
+            });
+        </script>
+        <script>
+            for (let icon of 'star,heart,home,file,key,sun,not_found'.split(',')) {
+                document.write('<div style="text-align:center"><u1-ico>'+icon+'</u1-ico><div style="font-size:12px">'+icon+'</div></div>');
+            }
+        </script>
+    </div>
+</div>
+
+<h2>Inline</h2>
+<div style="display:flex; gap:.1rem" id=inline-test>
+    <style>
+    #inline-test u1-ico { border:none; }
+    </style>
+    <div style="flex:1 1 200px">
+        <p id=inlineTextP>
+            Line-Height should be > 1.1<br>
+            Material Icons Font:
+            <script>
+                for (let icon of 'star,add,clear,call,snowboarding'.split(',')) {
+                    document.write('<u1-ico inline font=material>'+icon+'</u1-ico> ('+icon+') ');
+                }
+                document.currentScript.remove();
+            </script>
+            <br>
+            Remixicon Font:
+            <script>
+                for (let icon of 'star,heart,home,file,key,sun'.split(',')) {
+                    document.write('<u1-ico inline font=remix>'+icon+'</u1-ico> ('+icon+') ');
+                }
+                document.currentScript.remove();
+            </script>
+            <br>
+            LigatureSymbols Font:
+            <script>
+                for (let icon of 'star,heart,home,file,key,sun'.split(',')) {
+                    document.write('<u1-ico inline font=ls>'+icon+'</u1-ico> ('+icon+') ');
+                }
+                document.currentScript.remove();
+            </script>
+        </p>
+        <hr>
+    </div>
+    <div style="flex:1 1 200px">
+        <p>
+            <script>
+                document.write(inlineTextP.innerHTML.replace(/<u1-ico[^<]*<\/u1-ico>/g,'iii'));
+            </script>
+        </p>
+        <hr>
+    </div>
+</div>
+<h2>Vertical alignement</h2>
+Vertical-align initial: <u1-ico inline>star</u1-ico><br>
+Vertical-align baseline: <u1-ico style="vertical-align:baseline" inline>star</u1-ico><br>
+Vertical-align middle: <u1-ico style="vertical-align:middle" inline>star</u1-ico><br>
+Vertical-align text-bottom: <u1-ico style="vertical-align:text-bottom" inline>star</u1-ico><br>
+
+Vertical-align baseline and padding: <u1-ico style="vertical-align:baseline; padding:.5rem" >star</u1-ico><br>
+Vertical-align middle and padding: <u1-ico style="vertical-align:middle; padding:.5rem" >star</u1-ico><br>
+Vertical-align bottom and padding: <u1-ico style="vertical-align:bottom; padding:.5rem" >star</u1-ico><br>
+
+
+<h2>Styled</h2>
+<u1-ico class=styled>star</u1-ico>
+
+<style>
+.styled {
+    padding:1rem;
+    border:3px solid;
+    border-radius:.5em;
+    background:#777;
+    color:#5af;
+    transition:transform .9s, color .8s;
+}
+.styled:hover {
+    color:greenyellow;
+    transform:rotate(180deg);
+}
+</style>
