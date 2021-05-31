@@ -9,9 +9,14 @@
         <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/norm.css/beta.min.css">
         <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/base.min.css">
         <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/beta.min.css">
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/variables.min.css">
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/variables.more.min.css">
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/classless.min.css">
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/simple.min.css">
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/more.min.css">
 
-        <!--link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/print.min.css" media=print>
-        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/nomotion.min.css" media=prefers-reduced-motion-->
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/print.min.css" media=print>
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/nomotion.min.css" media=prefers-reduced-motion>
 
 
 
@@ -37,6 +42,17 @@ colorChooser.addEventListener('input',function(){
 </script>
 
 
+<h2>UTF8</h2>
+<div>
+    <div style="display:flex; flex-wrap:wrap; gap:.2rem" id=lsView>
+        <script>
+            for (let icon of '⏰,🍕,⌚,⏱,☃,☕,⚘,☼,🌤,🌥,🌦,🌧,🌨,🌩,🌪,🌷,🌹,☆,★,⚔,⚛,⚜,✠,〠,♔,♕,♖,♗,♘,♙,🍴'.split(',')) {
+                document.write('<div style="text-align:center"><u1-ico>'+icon+'</u1-ico><div style="font-size:12px">'+icon+'</div></div>');
+            }
+        </script>
+    </div>
+</div>
+
 <h2>LigatureSymbols</h2>
 <div style="--u1-ico-font:'LigatureSymbols'">
     <div style="display:flex; flex-wrap:wrap; gap:.2rem" id=lsView>
@@ -44,7 +60,7 @@ colorChooser.addEventListener('input',function(){
             ligaturesFromFamily('LigatureSymbols').then(function(ligas){
                 var str = '';
                 for (let icon of Object.keys(ligas)) {
-                    str += '<div style="text-align:center"><u1-ico>'+icon+'</u1-ico><div style="font-size:12px">'+icon+'</div></div>';
+                    str += '<div style="text-align:center"><u1-ico>'+icon+'</u1-ico><div style="font-size:18px">'+icon+'</div></div>';
                 }
                 lsView.innerHTML = str;
             });
