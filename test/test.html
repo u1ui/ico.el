@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="../font/LigatureSymbols.css">
         <link rel="stylesheet" href="../font/RemixFilled.css">
         <link rel="stylesheet" href="../font/RemixOutlined.css">
+        <link rel="stylesheet" href="../font/Font Awesome.css">
         <link rel="stylesheet" href="../ico.css">
 
         <link rel="stylesheet" href="./util.css">
@@ -52,6 +53,22 @@ colorChooser.addEventListener('input',function(){
         </script>
     </div>
 </div>
+
+<h2>Font Awesome</h2>
+<div style="display:flex; flex-wrap:wrap; gap:.2rem;" id=lsView>
+    <script>
+        for (let icon of '🧭︁,📞︁,+︁,👤︁,︁,'.split(',')) {
+            document.write('<div style="text-align:center"><u1-ico style="--u1-ico-font:\'Font Awesome\';">'+icon+'</u1-ico><div style="font-size:12px">'+icon+'</div></div>');
+        }
+    </script>
+    <script>
+        for (let icon of '︁,︁,︁,︁'.split(',')) {
+            document.write('<div style="text-align:center"><u1-ico style="--u1-ico-font:\'Font Awesome\';">'+icon+'</u1-ico><div style="font-size:12px">'+icon+'</div></div>');
+        }
+    </script>
+
+</div>
+
 
 <h2>LigatureSymbols</h2>
 <div style="--u1-ico-font:'LigatureSymbols'">
