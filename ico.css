@@ -24,17 +24,14 @@ u1-ico {
   */
   overflow:hidden;
 }
-
 u1-ico[icon]:before { /* todo if supported: :where([icon]::before) { */
     content:attr(icon);
 }
 
 
-/* default use utf-icons */
-html {
+html { /* use utf8-icons as default */
   /*--u1-ico-font:sans-serif;*/
-  /* noto on linux? */
-  --u1-ico-font:'Segoe UI Symbol', 'Noto Emoji', sans-serif;
+  --u1-ico-font:'Segoe UI Symbol', 'Noto Emoji', sans-serif; /* noto on linux? */
 }
 /*
 chrome does not need :after-trick (why?) , but ff
@@ -60,7 +57,6 @@ u1-ico[inline] {
   overflow:visible;
   font-size:1em;
   vertical-align: text-bottom;
-  xwidth:1em;
 }
 
 /*
