@@ -7,7 +7,7 @@ Universal Icon-Element
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nuxodin/u1-ico@1.0.0/font/Material Icons.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nuxodin/u1-ico@1.0.0/ico.css">
 
-<u1-ico>twitter</u1-ico>
+<u1-ico>star</u1-ico>
 ```
 
 ## Theming / custom css properties
