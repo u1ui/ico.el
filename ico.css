@@ -32,37 +32,28 @@ u1-ico[icon]:before { /* todo if supported: :where([icon]::before) { */
 
 /* default use utf-icons */
 html {
-  --u1-ico-font:sans-serif;
-  /* chrome does not need :after-hack , but ff */
+  /*--u1-ico-font:sans-serif;*/
   /* noto on linux? */
   --u1-ico-font:'Segoe UI Symbol', 'Noto Emoji', sans-serif;
 }
+/*
+chrome does not need :after-trick (why?) , but ff
+not working in safari :(
+*/
 u1-ico:after {
   content: "\00FE0E";
-  xline-height:inherit;
   font:inherit;
-} /* not working in safari :( */
-
+}
 /*
+proposed features to archive monochrome icons
 u1-ico {
-  text-transform: text;           /* proposed *
-  font-variant-emoji: text;       /* proposed *
-  font-variant-color: monochrome; /* proposed *
-  font-color: monochrome;         /* proposed *
+  text-transform: text;
+  font-variant-emoji: text;
+  font-variant-color: monochrome;
+  font-color: monochrome;
   font-palette: dark;             /* drafted for CSS Fonts Level 4 *
 }
 */
-/* ok? *
-u1-ico[font=utf8]:not([inline]) {
-  width:1em;
-}
-*/
-
-
-
-
-
-
 
 /* inline */
 u1-ico[inline] {
