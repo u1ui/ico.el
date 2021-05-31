@@ -5,4 +5,6 @@
   font-weight: 400;
   src: url(https://rawcdn.githack.com/kudakurage/LigatureSymbols/d54f43cd72d190b7a3c0b2ee1644fac770b4a146/LigatureSymbols-2.11.woff) format('woff');
 }
-u1-ico[font=ls] { --u1-ico-font:LigatureSymbols; }
+html {
+  --u1-ico-font:'LigatureSymbols';
+}

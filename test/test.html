@@ -4,10 +4,25 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>u1-ico Test</title>
-        <link rel="stylesheet" href="../fonts.css">
+
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/norm.css/norm.min.css">
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/norm.css/beta.min.css">
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/base.min.css">
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/beta.min.css">
+
+        <!--link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/print.min.css" media=print>
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/nomotion.min.css" media=prefers-reduced-motion-->
+
+
+
+        <link rel="stylesheet" href="../font/Material Icons.css">
+        <link rel="stylesheet" href="../font/LigatureSymbols.css">
+        <link rel="stylesheet" href="../font/RemixFilled.css">
+        <link rel="stylesheet" href="../font/RemixOutlined.css">
         <link rel="stylesheet" href="../ico.css">
+
         <link rel="stylesheet" href="./util.css">
-        <script type=module src="../ico.js"></script>
+        <script type=module src="../ico.beta.js"></script>
         <script type=module src="./util.js"></script>
 <body>
 
@@ -44,13 +59,13 @@ colorChooser.addEventListener('input',function(){
 
 <h2>Material Icons</h2>
 <div style="--u1-ico-font:'Material Icons'">
-    <select onchange="this.parentNode.style.setProperty('--u1-ico-font',this.value)">
+    <!--select onchange="this.parentNode.style.setProperty('--u1-ico-font',this.value)">
         <option value="Material Icons">--u1-ico-font:'Material Icons'</option>
         <option value="Material Icons Outlined">--u1-ico-font:'Material Icons Outlined'</option>
         <option value="Material Icons Round">--u1-ico-font:'Material Icons Round'</option>
         <option value="Material Icons Sharp">--u1-ico-font:'Material Icons Sharp'</option>
         <option value="Material Icons Two Tone">--u1-ico-font:'Material Icons Two Tone'</option>
-    </select><br>
+    </select><br-->
     <div style="display:flex; flex-wrap:wrap; gap:.2rem" id=materialView>
         <script type=module>
             /*
@@ -100,28 +115,32 @@ colorChooser.addEventListener('input',function(){
         <p id=inlineTextP>
             Line-Height should be > 1.1<br>
             Material Icons Font:
+            <div style="--u1-ico-font:'Material Icons'">
             <script>
                 for (let icon of 'star,add,clear,call,snowboarding'.split(',')) {
                     document.write('<u1-ico inline font=material>'+icon+'</u1-ico> ('+icon+') ');
                 }
                 document.currentScript.remove();
             </script>
-            <br>
+            </div>
             Remixicon Font:
+            <div style="--u1-ico-font:'RemixOutlined'">
             <script>
                 for (let icon of 'star,heart,home,file,key,sun'.split(',')) {
-                    document.write('<u1-ico inline font=remix>'+icon+'</u1-ico> ('+icon+') ');
+                    document.write('<u1-ico inline>'+icon+'</u1-ico> ('+icon+') ');
                 }
                 document.currentScript.remove();
             </script>
-            <br>
+            </div>
             LigatureSymbols Font:
+            <div style="--u1-ico-font:'LigatureSymbols'">
             <script>
                 for (let icon of 'star,heart,home,file,key,sun'.split(',')) {
-                    document.write('<u1-ico inline font=ls>'+icon+'</u1-ico> ('+icon+') ');
+                    document.write('<u1-ico inline>'+icon+'</u1-ico> ('+icon+') ');
                 }
                 document.currentScript.remove();
             </script>
+            </div>
         </p>
         <hr>
     </div>
@@ -135,30 +154,39 @@ colorChooser.addEventListener('input',function(){
     </div>
 </div>
 <h2>Vertical alignement</h2>
-Vertical-align initial: <u1-ico inline>star</u1-ico><br>
-Vertical-align baseline: <u1-ico style="vertical-align:baseline" inline>star</u1-ico><br>
-Vertical-align middle: <u1-ico style="vertical-align:middle" inline>star</u1-ico><br>
-Vertical-align text-bottom: <u1-ico style="vertical-align:text-bottom" inline>star</u1-ico><br>
+<div style="--u1-ico-font:'Material Icons'">
+    <h3>Using [inline]</h3>
+    Vertical-align initial: <u1-ico inline>star</u1-ico><br>
+    Vertical-align baseline: <u1-ico style="vertical-align:baseline" inline>star</u1-ico><br>
+    Vertical-align middle: <u1-ico style="vertical-align:middle" inline>star</u1-ico><br>
+    Vertical-align text-bottom: <u1-ico style="vertical-align:text-bottom" inline>star</u1-ico><br>
+    Vertical-align bottom: <u1-ico style="vertical-align:bottom" inline>star</u1-ico><br>
 
-Vertical-align baseline and padding: <u1-ico style="vertical-align:baseline; padding:.5rem" >star</u1-ico><br>
-Vertical-align middle and padding: <u1-ico style="vertical-align:middle; padding:.5rem" >star</u1-ico><br>
-Vertical-align bottom and padding: <u1-ico style="vertical-align:bottom; padding:.5rem" >star</u1-ico><br>
-
+    <h3>Not using [inline]</h3>
+    Vertical-align initial: <u1-ico style="" >star</u1-ico><br>
+    Vertical-align baseline: <u1-ico style="vertical-align:baseline;" >star</u1-ico><br>
+    Vertical-align middle: <u1-ico style="vertical-align:middle;" >star</u1-ico><br>
+    Vertical-align text-bottom: <u1-ico style="vertical-align:text-bottom;" >star</u1-ico><br>
+    Vertical-align bottom: <u1-ico style="vertical-align:bottom;" >star</u1-ico><br>
+</div>
 
 <h2>Styled</h2>
-<u1-ico class=styled>star</u1-ico>
+<div style="--u1-ico-font:'Material Icons'">
+    <u1-ico class=styled>star</u1-ico>
 
-<style>
-.styled {
-    padding:1rem;
-    border:3px solid;
-    border-radius:.5em;
-    background:#777;
-    color:#5af;
-    transition:transform .9s, color .8s;
-}
-.styled:hover {
-    color:greenyellow;
-    transform:rotate(180deg);
-}
+<style style="display:block;" contenteditable>
+    .styled {
+        padding:1rem;
+        border:3px solid;
+        border-radius:.5em;
+        background:#777;
+        color:#5af;
+        transition:transform .9s, color .8s;
+    }
+    .styled:hover {
+        color:greenyellow;
+        transform:rotate(180deg);
+    }
 </style>
+
+</div>

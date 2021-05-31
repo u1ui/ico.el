@@ -1,6 +1,3 @@
-html {
-  --u1-ico-font:"Material Icons";
-}
 u1-ico {
   font-weight: normal;
   font-style: normal;
@@ -28,18 +25,84 @@ u1-ico {
   overflow:hidden;
 }
 
-u1-ico[icon]::after { /* todo if supported: :where([icon]::after) { */
+u1-ico[icon]:before { /* todo if supported: :where([icon]::before) { */
     content:attr(icon);
 }
 
-/* BETA! */
+
+/* default use utf-icons */
+html {
+  --u1-ico-font:sans-serif;
+  /* chrome does not need :after-hack , but ff */
+  /* noto on linux? */
+  --u1-ico-font:'Segoe UI Symbol', 'Noto Emoji', sans-serif;
+}
+u1-ico:after {
+  content: "\00FE0E";
+  xline-height:inherit;
+  font:inherit;
+} /* not working in safari :( */
+
+/*
+u1-ico {
+  text-transform: text;           /* proposed *
+  font-variant-emoji: text;       /* proposed *
+  font-variant-color: monochrome; /* proposed *
+  font-color: monochrome;         /* proposed *
+  font-palette: dark;             /* drafted for CSS Fonts Level 4 *
+}
+*/
+/* ok? *
+u1-ico[font=utf8]:not([inline]) {
+  width:1em;
+}
+*/
+
+
+
+
+
+
+
 /* inline */
 u1-ico[inline] {
   overflow:visible;
-  font-size:1em; /* reset font to 1em instead of 1.5rem */
+  font-size:1em;
   vertical-align: text-bottom;
   xwidth:1em;
 }
+
+/*
+[u1-ico-before]::before,
+[u1-ico-after]::after {
+    /* fine *
+    font-family: var(--u1-ico-font);
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased; /* Support for all WebKit browsers. *
+    text-rendering: optimizeLegibility; /* Support for Safari and Chrome. *
+    -moz-osx-font-smoothing: grayscale; /* Support for Firefox. *
+    font-feature-settings: 'liga'; /* Support for IE. */
+    /* ok? *
+    display: inline-block;
+    line-height: 1;
+    vertical-align: text-bottom; /* needed? *
+}
+[u1-ico-before]::before {
+    content:attr(u1-ico-before);
+    margin-right:.2em;
+}
+[u1-ico-after]::after {
+    content:attr(u1-ico-after);
+    margin-left:.1em;
+}
+*/
+
 
 /* js | better generate in js? *
 html.u1-ico-js u1-ico { width:1em; }
