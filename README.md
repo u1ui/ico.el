@@ -1,5 +1,5 @@
 # &lt;u1-ico&gt;
-Universal Icon using different icon fonts
+Universal Icon-Element
 
 ## Ussage
 
