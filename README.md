@@ -17,7 +17,7 @@ OR
 
 
 ## Custom icon font
-Just ad this to your CSS:
+Just add this to your CSS:
 
 ```css
 @font-face {
