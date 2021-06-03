@@ -40,7 +40,8 @@ not working in safari :(
 u1-ico:after {
   content: "\00FE0E";
   font:inherit;
-  font-size: 0; /* for safari (it displays a stupid rect) */
+  /* for safari (it displays a stupid rect) */
+  opacity:0;
 }
 /*
 proposed features to archive monochrome icons
