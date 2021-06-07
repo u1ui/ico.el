@@ -37,6 +37,7 @@ const uIco = class extends HTMLElement {
         }
     }
     connectedCallback() {
+        /*
         let failed;
         if (this.firstChild) {
             const range = new Range();
@@ -50,5 +51,6 @@ const uIco = class extends HTMLElement {
             console.warn('icon (u1-ico) failed? Or element to small, text:'+this.textContent+' font:'+computed.fontFamily);
             console.log(this)
         }
+        */
     }
 }
