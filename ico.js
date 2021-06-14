@@ -17,10 +17,15 @@ document.documentElement.classList.add('u1-ico-js');
 const uIco = class extends HTMLElement {
     constructor() {
         super();
+
+        //const name = this.innerHTML.trim() || this.getAttribute('icon');
+        //if (materialIcons) name = name.replaceAll('-','_'); // todo?
+
+
         const dir = getComputedStyle(this).getPropertyValue('--u1-ico-dir').trim();
         if (dir) {
-            let [prefix, suffix='.svg'] = dir.split('{icon}')
             const name = this.innerHTML.trim() || this.getAttribute('icon');
+            const [prefix, suffix='.svg'] = dir.split('{icon}');
             const path = prefix + name + suffix;
             this.setAttribute('state','loading');
             var svg = fetch(path).then(res=>{

@@ -34,53 +34,58 @@
 <section>
     <h2>Comparison tool</h2>
     <input style="width:100%" id=namesInp value="star search menu home facebook chevron-right link">
-    <div style="overflow:auto; white-space:nowrap;">
-        <table id=table>
+    <div style="overflow:auto; white-space:nowrap; max-height:60vh">
+        <table id=table class="u1-table -Sticky">
             <thead>
-            <tbody class=u1-table>
+            <tbody>
                 <tr style="--u1-ico-dir:https://cdn.jsdelivr.net/npm/bytesize-icons@1.4.0/dist/icons/">
                     <td>
         </table>
     </div>
 
     <style style="display:block" contenteditable style="font-size:12px">
-        u1-ico {
+        u1-ico svg {
             xstroke: currentColor;
             xstroke-width: 2;
             xstroke-linecap: round;
             xstroke-linejoin: round;
-            fill: currentColor;
+            xfill: currentColor;
         }
     </style>
 
     <script type=module>
         let fonts = {
-            'Material':   'https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.11/svg/{icon}/baseline.svg',
-            'Teenyicons': 'https://cdn.jsdelivr.net/npm/teenyicons@0.4.1/outline/',
-            'Feather':    'https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/icons/',
-            'Bootstrap':  'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/icons/',
-            'Octicons':   'https://cdn.jsdelivr.net/npm/octicons@8.5.0/build/svg/',
-            'Bytesize':   'https://cdn.jsdelivr.net/npm/bytesize-icons@1.4.0/dist/icons/',
-            'Ionicons': 'https://cdn.jsdelivr.net/npm/ionicons@5.5.1/dist/svg/',
+            'Material':            'https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.11/svg/{icon}/baseline.svg',
+            'Teenyicons':          'https://cdn.jsdelivr.net/npm/teenyicons@0.4.1/outline/',
+            'Feather':             'https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/icons/',
+            'Bootstrap':           'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/icons/',
+            'Octicons':            'https://cdn.jsdelivr.net/npm/octicons@8.5.0/build/svg/',
+            'Bytesize':            'https://cdn.jsdelivr.net/npm/bytesize-icons@1.4.0/dist/icons/',
+            'Ionicons':            'https://cdn.jsdelivr.net/npm/ionicons@5.5.1/dist/svg/',
             'Fontawesome regular': 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/svgs/regular/',
-            'Fontawesome solid': 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/svgs/solid/',
-            'Fontawesome brands': 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/svgs/brands/',
-            'Dripicons': 'https://cdn.jsdelivr.net/npm/dripicons@2.0.0/SVG/',
-            'CoreUI Icons': 'https://cdn.jsdelivr.net/npm/@coreui/icons@2.0.1/svg/free/cil-',
-            'open-iconic': 'https://cdn.jsdelivr.net/npm/open-iconic@1.1.1/svg/',
-            'Radix': 'https://cdn.jsdelivr.net/gh/radix-ui/icons@3.1.0/packages/radix-icons/icons/15/',
-            'Heroicons outline': 'https://cdn.jsdelivr.net/npm/heroicons@1.0.1/outline/',
-            'Heroicons solid': 'https://cdn.jsdelivr.net/npm/heroicons@1.0.1/solid/',
-            'Typicons': 'https://cdn.jsdelivr.net/npm/typicons.font@2.1.2/src/svg/',
-            'Boxicons regular': 'https://cdn.jsdelivr.net/npm/boxicons@2.0.7/svg/regular/bx-',
-            'Boxicons solid': 'https://cdn.jsdelivr.net/npm/boxicons@2.0.7/svg/solid/bxs-',
-            'linearicons': 'https://cdn.jsdelivr.net/npm/linearicons@1.0.2/dist/svg/',
-            'FluetUI regular': 'https://cdn.jsdelivr.net/npm/@svg-icons/fluentui-system-regular@1.56.0/',
-            'FluetUI filled': 'https://cdn.jsdelivr.net/npm/@svg-icons/fluentui-system-filled@1.56.0/',
-            'Evil Icons': 'https://cdn.jsdelivr.net/npm/evil-icons@1.10.1/assets/icons/ei-',
-            'Eva Icons fill': 'https://cdn.jsdelivr.net/npm/eva-icons@1.1.3/fill/svg/',
-            'Eva Icons outline': 'https://cdn.jsdelivr.net/npm/eva-icons@1.1.3/outline/svg/{icon}-outline.svg',
-            'Zondicons': 'https://cdn.jsdelivr.net/npm/zondicons@1.2.0/',
+            'Fontawesome solid':   'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/svgs/solid/',
+            'Fontawesome brands':  'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/svgs/brands/',
+            'Dripicons':           'https://cdn.jsdelivr.net/npm/dripicons@2.0.0/SVG/',
+            'CoreUI Icons':        'https://cdn.jsdelivr.net/npm/@coreui/icons@2.0.1/svg/free/cil-',
+            'open-iconic':         'https://cdn.jsdelivr.net/npm/open-iconic@1.1.1/svg/',
+            'Radix':               'https://cdn.jsdelivr.net/gh/radix-ui/icons@3.1.0/packages/radix-icons/icons/15/',
+            'Heroicons outline':   'https://cdn.jsdelivr.net/npm/heroicons@1.0.1/outline/',
+            'Heroicons solid':     'https://cdn.jsdelivr.net/npm/heroicons@1.0.1/solid/',
+            'Typicons':            'https://cdn.jsdelivr.net/npm/typicons.font@2.1.2/src/svg/',
+            'Boxicons regular':    'https://cdn.jsdelivr.net/npm/boxicons@2.0.7/svg/regular/bx-',
+            'Boxicons solid':      'https://cdn.jsdelivr.net/npm/boxicons@2.0.7/svg/solid/bxs-',
+            'linearicons':         'https://cdn.jsdelivr.net/npm/linearicons@1.0.2/dist/svg/',
+            'FluetUI regular':     'https://cdn.jsdelivr.net/npm/@svg-icons/fluentui-system-regular@1.56.0/',
+            'FluetUI filled':      'https://cdn.jsdelivr.net/npm/@svg-icons/fluentui-system-filled@1.56.0/',
+            'Evil Icons':          'https://cdn.jsdelivr.net/npm/evil-icons@1.10.1/assets/icons/ei-',
+            'Eva Icons fill':      'https://cdn.jsdelivr.net/npm/eva-icons@1.1.3/fill/svg/',
+            'Eva Icons outline':   'https://cdn.jsdelivr.net/npm/eva-icons@1.1.3/outline/svg/{icon}-outline.svg',
+            'Zondicons':           'https://cdn.jsdelivr.net/npm/zondicons@1.2.0/',
+            'Tabler Icons':        'https://cdn.jsdelivr.net/npm/tabler-icons@1.35.0/icons/',
+            'holasvg-icons':       'https://cdn.jsdelivr.net/gh/marianabeldi/holasvg-icons/icons/',
+            'Jam icons':           'https://cdn.jsdelivr.net/gh/michaelampr/jam@3.1.0/icons/',
+            'entypo':              'https://cdn.jsdelivr.net/npm/entypo@2.2.1/src/Entypo/',
+            'fticons':             'https://cdn.jsdelivr.net/npm/@financial-times/fticons@1.23.1/svg/',
         }
         let names = [];
         function parseTable(){
