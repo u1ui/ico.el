@@ -13,6 +13,7 @@
         <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/more.min.css">
 
 
+
         <link rel="stylesheet" href="../font/Material Icons.css">
         <link rel="stylesheet" href="../font/LigatureSymbols.css">
         <link rel="stylesheet" href="../font/RemixFilled.css">
@@ -20,7 +21,10 @@
         <link rel="stylesheet" href="../font/Font Awesome.css">
         <link rel="stylesheet" href="../ico.css">
 
+
         <script type=module src="../ico.js"></script>
+        <!--script type=module src="https://cdn.jsdelivr.net/gh/u1ui/u1/auto.js"></script-->
+        <script type=module src="../../u1/auto.js"></script>
         <!--script type=module src="./util.js"></script>
         <link rel="stylesheet" href="./util.css"-->
 <body>
@@ -90,17 +94,20 @@
         let names = [];
         function parseTable(){
             names = namesInp.value.split(' ');
-            console.log(names)
-
             let str = '<thead><tr><th>Icon-Set';
             for (let name of names) {
+
+                ///package/gh/:user/:repo@:version/:structure?
                 str += '<th>'+name;
             }
             str += '<tbody>';
 
             for (let [set,url] of Object.entries(fonts)) {
                 let link = url.split('{icon}')[0];
-                str += `<tr style="--u1-ico-dir:${url}"><th><a href="${link}" target="${set}">${set}</a>`;
+                str +=
+                `<tr style="--u1-ico-dir:${url}">
+                    <th>
+                        <a href="${link}" target="${set}">${set}</a>`;
                 for (let name of names) {
                     str += '<td style="text-align:center"><u1-ico>'+name+'</u1-ico>';
                 }
@@ -109,6 +116,40 @@
         }
         parseTable();
         namesInp.addEventListener('change',parseTable)
+
+
+
+        // list all icons
+        document.getElementById('table').addEventListener('click',async function(e){
+            var href = e.target.closest('tr').querySelector('a').href;
+            var api = href.replace('cdn.jsdelivr.net', 'data.jsdelivr.com/v1/package').replace(/(@[^\/]+)\/.*/,'$1');
+            var parts = href.replace(/[^@]+@[^\/]+\//,'').split('/');
+            var data = await fetch(api).then(res=>res.json())
+            var curr = data;
+            for (let part of parts) {
+                if (part === '') break;
+                console.log('dir:'+part)
+                curr = curr.files.find(item=>item.name===part);
+                console.log(curr)
+            }
+
+            var dialog = document.createElement('dialog');
+            dialog.innerHTML = '<div id=icoList class=u1-auto-grid></div>';
+            dialog.style.setProperty('--u1-ico-dir', href);
+            dialog.style.width = '90vw';
+            dialog.style.height = '90vh';
+            dialog.style.overflow = 'auto';
+
+            curr.files.forEach(function(file){
+                let icon = file.name.replace('.svg','');
+                var item = document.createElement('div');
+                item.innerHTML = '<u1-ico xicon="'+icon+'">'+icon+'</u1-ico><br>'+icon;
+                dialog.querySelector('#icoList').append(item);
+            })
+
+            document.body.append(dialog)
+            dialog.style.display = 'grid';
+        })
     </script>
     <style>
         #table {
@@ -124,6 +165,25 @@
         }
         #table u1-ico[state=fail] {
             font-size:12px;
+        }
+
+        #icoList {
+            --ui-Gap:.5rem;
+            text-align:center;
+            font-size:14px;
+        }
+        #icoList > * {
+            padding:1rem;
+            border:1px solid #eee;
+            background:#f8f8f8;
+        }
+        #icoList u1-ico {
+            background:#fff;
+            transition: .4s;
+            transform:scale(1.001);
+        }
+        #icoList :hover u1-ico {
+            transform:scale(2.1);
         }
     </style>
 </section>

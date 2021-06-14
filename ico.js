@@ -22,9 +22,13 @@ const uIco = class extends HTMLElement {
         //if (materialIcons) name = name.replaceAll('-','_'); // todo?
 
 
+    }
+    connectedCallback() {
+
         const dir = getComputedStyle(this).getPropertyValue('--u1-ico-dir').trim();
         if (dir) {
             const name = this.innerHTML.trim() || this.getAttribute('icon');
+            this.setAttribute('icon',name);
             const [prefix, suffix='.svg'] = dir.split('{icon}');
             const path = prefix + name + suffix;
             this.setAttribute('state','loading');
@@ -40,8 +44,8 @@ const uIco = class extends HTMLElement {
             });
 
         }
-    }
-    connectedCallback() {
+
+
         /*
         let failed;
         if (this.firstChild) {
