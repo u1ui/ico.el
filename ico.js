@@ -1,32 +1,30 @@
+/*
 document.fonts.ready.then(()=>{
     document.documentElement.classList.add('u1-ico-ready');
     customElements.define('u1-ico', uIco);
 });
 document.documentElement.classList.add('u1-ico-js');
+*/
 
 
-// todo: icons from directory
-// [u1-ico][font=teenyicons] {
+// icons from directory
+// [u1-ico] {
 //     --directory:'https://cdn.jsdelivr.net/npm/teenyicons@0.4.1/outline/';
 // }
-// json directory-listing:
-// https://api.github.com/repos/:user/:repo/contents/:path
-// https://api.github.com/repos/teenyicons/teenyicons/contents/src/outline
 
 
 const uIco = class extends HTMLElement {
     constructor() {
         super();
-
         //const name = this.innerHTML.trim() || this.getAttribute('icon');
         //if (materialIcons) name = name.replaceAll('-','_'); // todo?
-
-
     }
     connectedCallback() {
-
-        const dir = getComputedStyle(this).getPropertyValue('--u1-ico-dir').trim();
+        // dir
+        let dir = getComputedStyle(this).getPropertyValue('--u1-ico-dir').trim();
         if (dir) {
+            if (dir[0]!=='"' && dir[0]!=="'") console.error('the value of --u1-ico-dir must be surrounded by quotes');
+            dir = dir.slice(1, -1);
             const name = this.innerHTML.trim() || this.getAttribute('icon');
             this.setAttribute('icon',name);
             const [prefix, suffix='.svg'] = dir.split('{icon}');
@@ -42,10 +40,7 @@ const uIco = class extends HTMLElement {
                 this.setAttribute('state','fail');
                 console.warn('failed to load "' + name + '" in ' + prefix);
             });
-
         }
-
-
         /*
         let failed;
         if (this.firstChild) {
@@ -63,3 +58,5 @@ const uIco = class extends HTMLElement {
         */
     }
 }
+
+customElements.define('u1-ico', uIco);

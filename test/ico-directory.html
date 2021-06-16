@@ -19,7 +19,7 @@
 
 
         <script type=module src="../ico.js"></script>
-        <script type=module src="https://cdn.jsdelivr.net/gh/u1ui/u1/auto.js"></script>
+        <script type=module src="https://cdn.jsdelivr.net/gh/u1ui/u1/auto.min.js"></script>
         <!--script type=module src="../../u1/auto.js"></script-->
         <!--script type=module src="./util.js"></script>
         <link rel="stylesheet" href="./util.css"-->
@@ -38,7 +38,7 @@
         <table id=table class="u1-table -Sticky">
             <thead>
             <tbody>
-                <tr style="--u1-ico-dir:https://cdn.jsdelivr.net/npm/bytesize-icons@1.4.0/dist/icons/">
+                <tr style="--u1-ico-dir:'https://cdn.jsdelivr.net/npm/bytesize-icons@1.4.0/dist/icons/'">
                     <td>
         </table>
     </div>
@@ -101,7 +101,7 @@
             for (let [set,url] of Object.entries(fonts)) {
                 let link = url.split('{icon}')[0];
                 str +=
-                `<tr style="--u1-ico-dir:${url}">
+                `<tr style="--u1-ico-dir:'${url}'">
                     <th>
                         <a href="${link}" target="${set}">${set}</a>`;
                 for (let name of names) {
@@ -131,20 +131,22 @@
 
             var dialog = document.createElement('dialog');
             dialog.innerHTML = '<div id=icoList class=u1-auto-grid></div>';
-            dialog.style.setProperty('--u1-ico-dir', href);
+            dialog.style.setProperty('--u1-ico-dir', "'"+href+"'");
             dialog.style.width = '90vw';
-            dialog.style.height = '90vh';
+            dialog.style.maxHeight = '90vh';
             dialog.style.overflow = 'auto';
 
             curr.files.forEach(function(file){
-                let icon = file.name.replace('.svg','');
+                let name = file.name;
+                if (!name.endsWith('.svg')) return;
+                let icon = name.replace('.svg','');
                 var item = document.createElement('div');
                 item.innerHTML = '<u1-ico xicon="'+icon+'">'+icon+'</u1-ico><br>'+icon;
                 dialog.querySelector('#icoList').append(item);
             })
 
             document.body.append(dialog)
-            dialog.style.display = 'grid';
+            dialog.style.display = 'block';
         })
     </script>
     <style>
@@ -164,19 +166,22 @@
         }
 
         #icoList {
-            --u1-Gap:.2rem;
+            --u1-Gap:.1rem;
+            --u1-Items-width:9em;
             text-align:center;
-            font-size:14px;
+            font-size:11px;
         }
         #icoList > * {
-            padding:1rem;
+            padding:.3rem .1rem;
+            --line-height:1.1em;
             border:1px solid #eee;
             background:#f8f8f8;
         }
         #icoList u1-ico {
             background:#fff;
-            transition: .4s;
+            transition: .15s;
             transform:scale(1.001);
+            margin-bottom:.5em;
         }
         #icoList :hover u1-ico {
             transform:scale(2.1);
@@ -186,8 +191,8 @@
 
 
 <section>
-    using: --u1-ico-dir:https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.11/svg/{icon}/baseline.svg
-    <div style="--u1-ico-dir:https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.11/svg/{icon}/baseline.svg">
+    using: --u1-ico-dir:"https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.11/svg/{icon}/baseline.svg"
+    <div style="--u1-ico-dir:'https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.11/svg/{icon}/baseline.svg'">
         <u1-ico icon=search></u1-ico>
         <u1-ico icon=facebook></u1-ico>
         <u1-ico icon=alarm></u1-ico>
