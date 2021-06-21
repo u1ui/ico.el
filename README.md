@@ -4,9 +4,9 @@ Universal Icon-Element
 ## Ussage
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/u1ui/u1-ico@1.0.0/font/Material Icons.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/u1ui/u1-ico@1.0.0/ico.css">
-<scrip src="https://cdn.jsdelivr.net/gh/nuxodin/u1-ico@1.0.0/ico.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/u1ui/u1-ico@1.5.0/font/Material Icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/u1ui/u1-ico@1.5.0/ico.css">
+<scrip src="https://cdn.jsdelivr.net/gh/nuxodin/u1-ico@1.5.0/ico.js"></script>
 
 <u1-ico>star</u1-ico>
 OR
