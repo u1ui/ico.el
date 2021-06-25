@@ -17,6 +17,7 @@ u1-ico {
   /* ok? */
   display: inline-block; /* inline-flex has an other baseline? */
   text-align:center;
+  vertical-align:middle;
   font-size: 1.5rem; /* 24px Preferred icon size, material-icons */
   /* overflow:hidden
     + prevents layout-shift on font load.
