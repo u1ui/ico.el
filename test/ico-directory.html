@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width">
         <title>u1-ico Test</title>
 
-        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/full.min.css">
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/full.css">
 
         <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/variables.min.css">
         <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/classless.min.css">
@@ -28,6 +28,7 @@
 <style>
     u1-ico[state=fail] {
         color:red;
+        font-size:10px;
     }
 </style>
 
@@ -75,8 +76,8 @@
             'Boxicons regular':    'https://cdn.jsdelivr.net/npm/boxicons@2.0.7/svg/regular/bx-',
             'Boxicons solid':      'https://cdn.jsdelivr.net/npm/boxicons@2.0.7/svg/solid/bxs-',
             'linearicons':         'https://cdn.jsdelivr.net/npm/linearicons@1.0.2/dist/svg/',
-            'FluetUI regular':     'https://cdn.jsdelivr.net/npm/@svg-icons/fluentui-system-regular@1.56.0/',
-            'FluetUI filled':      'https://cdn.jsdelivr.net/npm/@svg-icons/fluentui-system-filled@1.56.0/',
+            'FluentUI regular':    'https://cdn.jsdelivr.net/npm/@svg-icons/fluentui-system-regular@1.56.0/',
+            'FluentUI filled':     'https://cdn.jsdelivr.net/npm/@svg-icons/fluentui-system-filled@1.56.0/',
             'Evil Icons':          'https://cdn.jsdelivr.net/npm/evil-icons@1.10.1/assets/icons/ei-',
             'Eva Icons fill':      'https://cdn.jsdelivr.net/npm/eva-icons@1.1.3/fill/svg/',
             'Eva Icons outline':   'https://cdn.jsdelivr.net/npm/eva-icons@1.1.3/outline/svg/{icon}-outline.svg',
@@ -118,15 +119,13 @@
         // list all icons
         document.getElementById('table').addEventListener('click',async function(e){
             var href = e.target.closest('tr').querySelector('a').href;
-            var api = href.replace('cdn.jsdelivr.net', 'data.jsdelivr.com/v1/package').replace(/(@[^\/]+)\/.*/,'$1');
-            var parts = href.replace(/[^@]+@[^\/]+\//,'').split('/');
-            var data = await fetch(api).then(res=>res.json())
+            const [, api, , path] = href.replace('cdn.jsdelivr.net', 'data.jsdelivr.com/v1/package').match(/(.*@[0-9.]+)(\/)(.*)/);
+            var parts = path.split('/');
+            var data = await fetch(api).then(res=>res.json());
             var curr = data;
             for (let part of parts) {
                 if (part === '') break;
-                console.log('dir:'+part)
                 curr = curr.files.find(item=>item.name===part);
-                console.log(curr)
             }
 
             var dialog = document.createElement('dialog');
