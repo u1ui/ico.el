@@ -60,7 +60,9 @@ u1-ico {
 u1-ico[inline] {
   overflow:visible;
   font-size:1em;
-  vertical-align: text-bottom;
+  vertical-align: text-bottom; /* better middle? */
+  /* display: contents; todo? */
+  /* margin:auto;  todo: dont stretch if its a flex-item? */
 }
 
 
