@@ -1,17 +1,7 @@
-/*
-document.fonts.ready.then(()=>{
-    document.documentElement.classList.add('u1-ico-ready');
-    customElements.define('u1-ico', uIco);
-});
-document.documentElement.classList.add('u1-ico-js');
-*/
-
-
 // icons from directory
 // [u1-ico] {
 //     --directory:'https://cdn.jsdelivr.net/npm/teenyicons@0.4.1/outline/';
 // }
-
 
 const uIco = class extends HTMLElement {
     constructor() {
