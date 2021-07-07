@@ -120,7 +120,7 @@
 
 
         // list all icons
-        document.getElementById('table').addEventListener('click',async function(e){
+        document.getElementById('table').addEventListener('click', async function(e){
             var href = e.target.closest('tr').querySelector('a').href;
             const [, api, , path] = href.replace('cdn.jsdelivr.net', 'data.jsdelivr.com/v1/package').match(/(.*@[0-9.]+)(\/)(.*)/);
             var parts = path.split('/');
