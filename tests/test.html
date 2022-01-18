@@ -32,21 +32,66 @@
 <body>
 
 <label>
-    Change Color <input id=colorChooser name=y type=color oninput="document.documentElement.style.color=this.value">
+    Change Color <input id=colorChooser name=y type=color oninput="document.documentElement.style.setProperty('--icon-color', this.value);">
 </label>
-<script>
-colorChooser.addEventListener('input',function(){
-    console.log(e)
-    document.documentElement.style.color = this.value;
-})
-</script>
+<style>
+    u1-ico {
+        color:var(--icon-color);
+    }
+</style>
+
+
+<h2>Variants</h2>
+<div>
+    <table>
+        <tr>
+            <td>Variant
+            <td>Result
+            <td>no js needed
+            <td>fast
+            <td>good dx
+            <td>beautifully aligned
+        <tr>
+            <td>Using<br>direct SVG:
+            <td>
+                <u1-ico>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"></path>
+                    </svg></u1-ico>
+            <td>✓
+            <td>✓
+            <td>
+            <td>✓
+        <tr>
+            <td>Using <br>--u1-ico-dir
+            <td><u1-ico style="--u1-ico-dir: 'https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.11/svg/{icon}/baseline.svg';" icon="search"></u1-ico>
+            <td>
+            <td>
+            <td>✓
+            <td>✓
+        <tr>
+            <td>Using <br>--u1-ico-font
+            <td><u1-ico style="--u1-ico-font:Material Icons" icon="search"></u1-ico>
+            <td>✓
+            <td>
+            <td>✓
+            <td>✓
+        <tr>
+            <td>Using UTF-8 (🔍):
+            <td><u1-ico>🔍</u1-ico>
+            <td>✓
+            <td>✓
+            <td>✓
+            <td>
+    </table>
+</div>
 
 
 <h2>UTF8</h2>
 <div>
     <div style="display:flex; flex-wrap:wrap; gap:.2rem" id=lsView>
         <script>
-            for (let icon of '⏰,🍕,⌚,⏱,☃,☕,⚘,☼,🌤,🌥,🌦,🌧,🌨,🌩,🌪,🌷,🌹,☆,★,⚔,⚛,⚜,✠,〠,♔,♕,♖,♗,♘,♙,🍴'.split(',')) {
+            for (let icon of '🔍,⏰,🍕,⌚,⏱,☃,☕,⚘,☼,🌤,🌥,🌦,🌧,🌨,🌩,🌪,🌷,🌹,☆,★,⚔,⚛,⚜,✠,〠,♔,♕,♖,♗,♘,♙,🍴'.split(',')) {
                 document.write('<div style="text-align:center"><u1-ico>'+icon+'</u1-ico><div style="font-size:12px">'+icon+'</div></div>');
             }
         </script>

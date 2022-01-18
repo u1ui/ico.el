@@ -2,9 +2,6 @@
 https://stackoverflow.com/a/40020609/4865307
 https://docs.google.com/spreadsheets/d/1KQDH9uArJr-8m4UvAEd02ixaX_-wauSwjy9qYCwIOvE/edit#gid=645289137
 
-*/
-
-/*
 
 # emoji list
 https://apps.timwhitlock.info/emoji/tables/unicode
@@ -14,6 +11,7 @@ https://www.unicode.org/emoji/charts/full-emoji-list.html
 
 Noto Emoji
 https://www.fontspace.com/noto-emoji-font-f22283
+cdn: https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@2.034/fonts/NotoEmoji-Regular.ttf
 
 Symbola Font
 https://www.fontspace.com/symbola-font-f22021
@@ -27,35 +25,7 @@ https://www.fontspace.com/unifont-font-f26370
 EmojiSymbols Font (c)blockworks - Kenichi Kaneko (attribution required)
 http://emojisymbols.com/
 
-
-
-@font-face {
-    font-family: "EmojiSymbols";
-    src: url('EmojiSymbols-Regular.woff2') format('woff2');
-    text-decoration: none;
-    font-style: normal;
-}
 */
-
-u1-ico[font=utf8] {
-    --u1-ico-font:sans-serif;
-    /* chrome does not need :after-hack , but ff */
-    /* noto on linux? */
-    --u1-ico-font:'Segoe UI Symbol', 'Noto Emoji';
-
-    text-transform: text;           /* proposed */
-    font-variant-emoji: text;       /* proposed */
-    font-variant-color: monochrome; /* proposed */
-    font-color: monochrome;         /* proposed */
-    font-palette: dark;             /* drafted for CSS Fonts Level 4 */
-}
-
-/* ok? */
-u1-ico[font=utf8]:not([inline]) {
-    width:1em;
-}
-
-u1-ico[font=utf8]:after { content: "\00FE0E"; }
 
 /* good names */
 u1-ico[font=utf8][icon=close]:before { content:'✕' }

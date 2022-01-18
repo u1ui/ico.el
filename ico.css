@@ -14,6 +14,8 @@ u1-ico {
   font-feature-settings: 'liga'; /* Support for IE. */
   font-family: var(--u1-ico-font) !important;
 
+  fill:currentColor; /* for svg, dont use `u1-ico > svg { fill:currentColor }` because it can have the attribute fill="none" */
+
   /* ok? */
   display: inline-block; /* inline-flex has an other baseline? */
   text-align:center;
@@ -38,20 +40,20 @@ html { /* use utf8-icons as default */
 /*
 chrome does not need :after-trick (why?) , but ff
 not working in safari :(
-*/
+*
 u1-ico:after {
   content: "\00FE0E";
   font:inherit;
-  /* for safari (it displays a stupid rect) */
+  /* for safari (it displays a stupid rect) *
   opacity:0;
 }
 /*
 proposed features to archive monochrome icons
 u1-ico {
-  text-transform: text;
-  font-variant-emoji: text;
-  font-variant-color: monochrome;
-  font-color: monochrome;
+  text-transform: text;           /* proposed *
+  font-variant-emoji: text;       /* proposed *
+  font-variant-color: monochrome; /* proposed *
+  font-color: monochrome;         /* proposed *
   font-palette: dark;             /* drafted for CSS Fonts Level 4 *
 }
 */
@@ -69,21 +71,33 @@ u1-ico[inline] {
 
 
 /* js loaded icons */
+u1-ico > svg {
+  xdisplay:block;
+  xvertical-align:middle;
+  vertical-align:bottom;
+  height:1em;
+  width:auto;
+  min-width:1em;
+  overflow:visible;
+  margin:auto;
+}
+
+/* */
 u1-ico[state]:before,
 u1-ico[state]:after {
   display:none;
 }
 u1-ico[state] > svg {
-  display:block;
-  height:1em;
-  min-width:1em;
-  overflow:visible;
-  margin:auto;
+  xdisplay:block;
+  xheight:1em;
+  xmin-width:1em;
+  xoverflow:visible;
+  xmargin:auto;
 }
 u1-ico[state=failed]:before {
   display:block;
 }
-
+/* */
 
 /*
 [u1-ico-before]::before,
@@ -128,10 +142,9 @@ u1-ico[failed] {
   xxxfont-family:inherit;
 }
 
-/* USEFUL? */
-/* theming *
+/* USEFUL? *
 u1-ico {
-  color: var(--u1-ico-color);
   font-size:var(--u1-ico-size):
   xoverflow: hidden;
 }
+*/
