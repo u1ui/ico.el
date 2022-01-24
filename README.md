@@ -19,7 +19,6 @@ OR
 ## Demos
 https://raw.githack.com/u1ui/ico.el/main/tests/anicons.html  
 https://raw.githack.com/u1ui/ico.el/main/tests/before-after.html  
-https://raw.githack.com/u1ui/ico.el/main/tests/devicons.html  
 https://raw.githack.com/u1ui/ico.el/main/tests/ico-directory.html  
 https://raw.githack.com/u1ui/ico.el/main/tests/test.html  
 https://raw.githack.com/u1ui/ico.el/main/tests/utf8.html  
