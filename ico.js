@@ -18,7 +18,7 @@ const uIco = class extends HTMLElement {
             const [prefix, suffix='.svg'] = dir.split('{icon}');
             const path = prefix + name + suffix;
             this.setAttribute('state','loading');
-            var svg = fetch(path).then(res=>{
+            var svg = fetch(path, {cache: "force-cache"}).then(res=>{ // "force-cache": why is the response not cached like direct in the browser?
                 if (!res.ok) throw new Error("Not 2xx response");
                 res.text().then(svg=>{
                     this.setAttribute('state','ok');
