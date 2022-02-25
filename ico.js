@@ -9,7 +9,7 @@ const uIco = class extends HTMLElement {
     }
     connectedCallback() {
 
-        if (this.firstChildElement) return; // skip if not text-only
+        if (this.firstElementChild) return; // skip if not text-only
 
         // fetch svg if --ui-ico-directory is set
         let dir = getComputedStyle(this).getPropertyValue('--u1-ico-dir').trim();
