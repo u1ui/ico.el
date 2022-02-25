@@ -8,7 +8,10 @@ const uIco = class extends HTMLElement {
         super();
     }
     connectedCallback() {
-        // dir
+
+        if (this.firstChildElement) return; // skip if not text-only
+
+        // fetch svg if --ui-ico-directory is set
         let dir = getComputedStyle(this).getPropertyValue('--u1-ico-dir').trim();
         if (dir) {
             if (dir[0]!=='"' && dir[0]!=="'") console.error('the value of --u1-ico-dir must be surrounded by quotes');
