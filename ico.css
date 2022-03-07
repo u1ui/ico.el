@@ -24,9 +24,8 @@ u1-ico {
   /* overflow:hidden
     + prevents layout-shift on font load.
     - But baseline gets to the box instead of the text.
-    - Some Icons on some Fonts may get cuted?
+    - Some Icons on some Fonts may get cuted!
   */
-  overflow:hidden;
 }
 u1-ico[icon]:before { /* todo if supported: :where([icon]::before) { */
     content:attr(icon);
