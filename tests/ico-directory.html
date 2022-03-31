@@ -104,8 +104,14 @@
 
             for (let [set,url] of Object.entries(fonts)) {
                 let link = url.split('{icon}')[0];
+
+                let caseType = '';
+                /* not implemented
+                if (set === 'Adobe Spectrum') caseType = 'AA'
+                */
+
                 str +=
-                `<tr style="--u1-ico-dir:'${url}'">
+                `<tr style="--u1-ico-dir:'${url}'; --u1-ico-dir-case-type:${caseType}">
                     <th>
                         <a href="${link}" target="${set}">${set}</a>`;
                 for (let name of names) {

@@ -19,7 +19,19 @@ const uIco = class extends HTMLElement {
             const name = this.getAttribute('icon') || this.innerHTML.trim();
             this.setAttribute('icon',name);
             const [prefix, suffix='.svg'] = dir.split('{icon}');
-            const path = prefix + name + suffix;
+
+            let fileName = name;
+            /* todo? *
+            // convert to original-filename
+            const type = getComputedStyle(this).getPropertyValue('--u1-ico-dir-case-type').trim() || 'a-a';
+            console.log(fileName)
+            if (type[0]==='A') fileName = fileName.replace(/^([a-z])/, g => g[0].toUpperCase()); // first upper
+            if (type.at(-1)==='A') fileName = fileName.replace(/-([a-z])/g, g => g[1].toUpperCase()); // camel-case
+            const between = type.slice(1, -1);
+            if (between !== '-') fileName = fileName.replace(/-/g, between);
+            /**/
+
+            const path = prefix + fileName + suffix;
             this.setAttribute('state','loading');
             var svg = fetch(path, {cache: "force-cache"}).then(res=>{ // "force-cache": why is the response not cached like direct in the browser?
                 if (!res.ok) throw new Error("Not 2xx response");
@@ -29,7 +41,7 @@ const uIco = class extends HTMLElement {
                 })
             }).catch(err=>{
                 this.setAttribute('state','fail');
-                console.warn('failed to load "' + name + '" in ' + prefix);
+                console.warn('failed to load "' + fileName + '" in ' + prefix);
             });
         }
     }
