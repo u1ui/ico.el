@@ -11,6 +11,10 @@ Universal Icon-Element
 html {
     --u1-ico-dir:'https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.11/svg/{icon-name}/baseline.svg';
 }
+u1-ico {
+    font-size: 1rem;
+    color: blue;
+}
 </style>
 
 <u1-ico>star</u1-ico> <!-- visible for screenreaders -->
