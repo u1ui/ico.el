@@ -20,7 +20,7 @@ OR
 
 ## Variant "icon-directory"
 
-Use this css-property to define where the icons are located.  
+Use the css-property `-u1-ico-dir:` to define where the icons are located.  
 The value must be in quotes.
 
 ### Placeholder "{icon}"
