@@ -18,23 +18,23 @@ const uIco = class extends HTMLElement {
             dir = dir.slice(1, -1);
             const name = this.getAttribute('icon') || this.innerHTML.trim();
             this.setAttribute('icon',name);
-            const [prefix, suffix='.svg'] = dir.split('{icon}');
 
+            let [prefix, firstWord, between='', nextWord, suffix='.svg'] = dir.split(/{(icon)([^n]*)?(name)?}/i);
+            if (!nextWord) between = '-'; // if just: {icon}
+
+            // icon nameing convertion
             let fileName = name;
-            /* todo? *
-            // convert to original-filename
-            const type = getComputedStyle(this).getPropertyValue('--u1-ico-dir-case-type').trim() || 'a-a';
-            console.log(fileName)
-            if (type[0]==='A') fileName = fileName.replace(/^([a-z])/, g => g[0].toUpperCase()); // first upper
-            if (type.at(-1)==='A') fileName = fileName.replace(/-([a-z])/g, g => g[1].toUpperCase()); // camel-case
-            const between = type.slice(1, -1);
+            const upperFirst = firstWord && firstWord[0] === 'I';
+            const upperWords = nextWord  && nextWord[0]  === 'N';
+            if (upperFirst) fileName = fileName.replace(/^([a-z])/, g => g[0].toUpperCase()); // first upper
+            if (upperWords) fileName = fileName.replace(/-([a-z])/g, g => g[1].toUpperCase()); // camel-case
             if (between !== '-') fileName = fileName.replace(/-/g, between);
-            /**/
 
             const path = prefix + fileName + suffix;
+
             this.setAttribute('state','loading');
             var svg = fetch(path, {cache: "force-cache"}).then(res=>{ // "force-cache": why is the response not cached like direct in the browser?
-                if (!res.ok) throw new Error("Not 2xx response");
+                if (!res.ok) throw new Error("Not 2xx response (does the icon not exist?)");
                 res.text().then(svg=>{
                     this.setAttribute('state','ok');
                     this.innerHTML = svg;
