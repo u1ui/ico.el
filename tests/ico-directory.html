@@ -103,7 +103,7 @@
             str += '<tbody>';
 
             for (let [set,url] of Object.entries(fonts)) {
-                let link = url.split('{icon}')[0];
+                let link = url.split(/{icon.*}/i)[0];
 
                 let caseType = '';
                 /* not implemented
