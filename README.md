@@ -45,18 +45,8 @@ html {
 
 
 ## Variant "icon-font":
-`--u1-ico-font:'LigatureSymbols'` Defines the font used for the icons  
 
-Note: `--u1-ico-dir` is stronger then `--u1-ico-font`.
-
-
-## Demos
-https://raw.githack.com/u1ui/ico.el/main/tests/ico-directory.html  
-https://raw.githack.com/u1ui/ico.el/main/tests/test.html  
-
-## Custom icon font
-Just add this to your CSS:
-
+Define the font used for the icons:
 ```css
 @font-face {
     font-family: 'my icon font';
@@ -65,6 +55,13 @@ Just add this to your CSS:
     src: url(my-icon-font.woff2) format('woff2');
 }
 html {
-    -u1-ico-font:'my icon font';
+    --u1-ico-font:'my icon font';
 }
 ```
+
+Note: `--u1-ico-dir` is stronger then `--u1-ico-font`.
+
+
+## Demos
+https://raw.githack.com/u1ui/ico.el/main/tests/ico-directory.html  
+https://raw.githack.com/u1ui/ico.el/main/tests/test.html  
