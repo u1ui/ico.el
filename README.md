@@ -13,9 +13,9 @@ html {
 }
 </style>
 
-<u1-ico>star</u1-ico>
+<u1-ico>star</u1-ico> <!-- accessible -->
 OR
-<u1-ico icon="star"></u1-ico>
+<u1-ico icon="star"></u1-ico> <!-- not accessible -->
 ```
 
 ## Variant "icon-directory"
