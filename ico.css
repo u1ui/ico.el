@@ -67,8 +67,6 @@ u1-ico[inline] {
 }
 
 
-
-
 /* js loaded icons */
 u1-ico > svg {
   xdisplay:block;
@@ -96,24 +94,3 @@ u1-ico[state] > svg {
 u1-ico[state=failed]:before {
   display:block;
 }
-/* */
-
-
-
-/* js | better generate in js? *
-html.u1-ico-js u1-ico { width:1em; }
-html.u1-ico-ready u1-ico { width: auto; }
-
-u1-ico[failed] {
-  overflow:visible;
-  width:auto;
-  --u1-ico-font:initial;
-  xxxfont-family:inherit;
-}
-
-/* USEFUL? *
-u1-ico {
-  font-size:var(--u1-ico-size):
-  xoverflow: hidden;
-}
-*/
