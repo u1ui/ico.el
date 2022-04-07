@@ -21,7 +21,8 @@ OR
 ## Variant "icon-directory"
 
 Use the css-property `-u1-ico-dir:https://x.y/icons-directory/` to define where the icons are located.  
-The value must be in quotes.
+The value must be in quotes.  
+See the demo ico-directory.html for working icon-sets
 
 ### Placeholder "{icon}"
 
