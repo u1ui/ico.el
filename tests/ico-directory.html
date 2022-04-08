@@ -45,7 +45,7 @@
 
     <style style="display:block" contenteditable style="font-size:12px">
         u1-ico {
-            color:green;
+            color:#05a;
             /* not recommended: */
             xstroke: currentColor;
             xstroke-width: 2;
@@ -86,10 +86,17 @@
             'holasvg-icons':       'https://cdn.jsdelivr.net/gh/marianabeldi/holasvg-icons/icons/',
             'Jam icons':           'https://cdn.jsdelivr.net/gh/michaelampr/jam@3.1.0/icons/',
             'entypo':              'https://cdn.jsdelivr.net/npm/entypo@2.2.1/src/Entypo/',
+            'Adobe Spectrum':      'https://cdn.jsdelivr.net/npm/@adobe/spectrum-css-workflow-icons@1.4.2/24/{IconName}.svg',
+            'mono icons':          'https://cdn.jsdelivr.net/npm/mono-icons@1.3.1/svg/',
+            'line awesome':        'https://cdn.jsdelivr.net/npm/line-awesome@1.3.0/svg/',
+            'flat color icons':    'https://cdn.jsdelivr.net/npm/flat-color-icons@1.1.0/svg/',
+            'icons8 windows-10-icons': 'https://cdn.jsdelivr.net/npm/windows-10-icons@1.0.1/svg/production/{icon_name}.svg',
             'fticons':             'https://cdn.jsdelivr.net/npm/@financial-times/fticons@1.23.1/svg/',
             'photon icons':        'https://cdn.jsdelivr.net/npm/photon-icons@5.4.0/icons/desktop/',
             'devicons':            'https://cdn.jsdelivr.net/npm/devicons@1.8.0/!SVG/{icon_name}',
-            'Adobe Spectrum':      'https://cdn.jsdelivr.net/npm/@adobe/spectrum-css-workflow-icons@1.4.2/24/{IconName}.svg',
+            'Figma UI Icons':      'https://cdn.jsdelivr.net/npm/css.gg@2.0.0/icons/svg/',
+            'ifolio licons':       'https://cdn.jsdelivr.net/gh/ifolio/licons@master/svg/',
+            //'sf symbols':          'https://cdn.jsdelivr.net/gh/brendanballon/sfsymbols-svg@latest/symbols/',
         }
         let names = [];
         function parseTable(){
@@ -127,8 +134,19 @@
 
         // list all icons
         document.getElementById('table').addEventListener('click', async function(e){
+
             var href = e.target.closest('tr').querySelector('a').href;
-            const [, api, , path] = href.replace('cdn.jsdelivr.net', 'data.jsdelivr.com/v1/package').match(/(.*@[0-9.]+)(\/)(.*)/);
+
+            var dialog = document.createElement('dialog');
+            dialog.innerHTML = 'loading...';
+            dialog.style.setProperty('--u1-ico-dir', "'"+href+"'");
+            dialog.style.width = '100vw';
+            dialog.style.maxHeight = '100vh';
+            dialog.style.overflow = 'auto';
+            document.body.append(dialog)
+            dialog.showModal();
+
+            const [, api, , path] = href.replace('cdn.jsdelivr.net', 'data.jsdelivr.com/v1/package').match(/(.*@[^/]+)(\/)(.*)/);
             var parts = path.split('/');
             var data = await fetch(api).then(res=>res.json());
             var curr = data;
@@ -137,12 +155,7 @@
                 curr = curr.files.find(item=>item.name===part);
             }
 
-            var dialog = document.createElement('dialog');
             dialog.innerHTML = '<div id=icoList class=u1-auto-grid></div>';
-            dialog.style.setProperty('--u1-ico-dir', "'"+href+"'");
-            dialog.style.width = '90vw';
-            dialog.style.maxHeight = '90vh';
-            dialog.style.overflow = 'auto';
 
             curr.files.forEach(function(file){
                 let name = file.name;
@@ -153,8 +166,6 @@
                 dialog.querySelector('#icoList').append(item);
             })
 
-            document.body.append(dialog)
-            dialog.showModal();
         });
 
     </script>
@@ -175,7 +186,7 @@
         }
 
         #icoList {
-            --u1-Gap:.1rem;
+            --u1-Gap:1rem;
             --u1-Items-width:9em;
             text-align:center;
             font-size:11px;
@@ -183,8 +194,8 @@
         #icoList > * {
             padding:.3rem .1rem;
             --line-height:1.1em;
-            border:1px solid #eee;
-            background:#f8f8f8;
+            xborder:1px solid #eee;
+            xbackground:#f8f8f8;
         }
         #icoList u1-ico {
             background:#fff;
