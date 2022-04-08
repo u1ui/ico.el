@@ -38,7 +38,7 @@ const uIco = class extends HTMLElement {
                 res.text().then(svg=>{
                     this.setAttribute('state','ok');
                     this.innerHTML = svg;
-                })
+                });
             }).catch(err=>{
                 this.setAttribute('state','fail');
                 console.warn('failed to load "' + fileName + '" in ' + prefix);
