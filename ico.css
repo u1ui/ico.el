@@ -41,7 +41,8 @@ html { /* use utf8-icons as default */
 u1-ico[inline] {
   overflow:visible;
   font-size:1em;
-  vertical-align: text-bottom; /* better middle? */
+  /* vertical-align: text-bottom; zzz */
+  vertical-align: -11%;
   /* display: contents; todo? */
   /* margin:auto;  todo: dont stretch if its a flex-item? */
 }
