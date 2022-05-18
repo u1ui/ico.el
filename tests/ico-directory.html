@@ -137,7 +137,7 @@
             dialog.style.width = '100vw';
             dialog.style.maxHeight = '100vh';
             dialog.style.overflow = 'auto';
-            document.body.append(dialog)
+            document.body.append(dialog);
             dialog.showModal();
 
             const [, api, , path] = href.replace('cdn.jsdelivr.net', 'data.jsdelivr.com/v1/package').match(/(.*@[^/]+)(\/)(.*)/);
@@ -161,6 +161,21 @@
             })
 
         });
+
+        document.addEventListener('click',e=>{
+            const ico = e.target.closest('u1-ico');
+            if (!ico) return;
+            e.stopImmediatePropagation();
+            navigator.clipboard.writeText(ico.innerHTML.trim());
+            ico.style.backgroundColor = '#fe09';
+            ico.style.outline = '.1em solid #fe09';
+            ico.style.transition = '.1s';
+            setTimeout(() => {
+                ico.style.backgroundColor = '';
+                ico.style.outline = '';
+            }, 500);
+        },true)
+
 
     </script>
     <style>
