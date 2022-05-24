@@ -41,7 +41,7 @@ const uIco = class extends HTMLElement {
                 });
             }).catch(err=>{
                 this.setAttribute('state','fail');
-                console.warn('failed to load "' + fileName + '" in ' + prefix);
+                // todo retry? console.warn('failed to load "' + fileName + '" in ' + prefix);
             });
         }
     }
