@@ -16,7 +16,8 @@ const uIco = class extends HTMLElement {
         if (dir) {
             if (dir[0]!=='"' && dir[0]!=="'") console.error('the value of --u1-ico-dir must be surrounded by quotes');
             dir = dir.slice(1, -1);
-            const name = this.getAttribute('icon') || this.innerHTML.trim();
+            const inner = this.innerHTML.trim();
+            const name = this.getAttribute('icon') || inner;
             this.setAttribute('icon',name);
 
             let [prefix, firstWord, between='', nextWord, suffix='.svg'] = dir.split(/{(icon)([^n]*)?(name)?}/i);
@@ -38,6 +39,10 @@ const uIco = class extends HTMLElement {
                 res.text().then(svg=>{
                     this.setAttribute('state','ok');
                     this.innerHTML = svg;
+
+                    if (inner) { // if the name was the content of the element, it was indened as a label
+                        !this.hasAttribute('aria-label') && this.setAttribute('aria-label', inner);
+                    }
                 });
             }).catch(err=>{
                 this.setAttribute('state','fail');
