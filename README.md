@@ -67,6 +67,7 @@ Note: `--u1-ico-dir` is stronger then `--u1-ico-font`.
 
 
 ## Demos
+https://raw.githack.com/u1ui/ico.el/main/tests/emojis.html  
 https://raw.githack.com/u1ui/ico.el/main/tests/ico-directory.html  
 https://raw.githack.com/u1ui/ico.el/main/tests/minimal.html  
 https://raw.githack.com/u1ui/ico.el/main/tests/test.html  
