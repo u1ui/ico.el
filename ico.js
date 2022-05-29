@@ -41,7 +41,7 @@ const uIco = class extends HTMLElement {
                     this.innerHTML = svg;
 
                     if (inner) { // if the name was the content of the element, it was indened as a label
-                        !this.hasAttribute('aria-label') && this.setAttribute('aria-label', inner);
+                        this.firstElementChild.setAttribute('aria-label', inner);
                     }
                 });
             }).catch(err=>{
