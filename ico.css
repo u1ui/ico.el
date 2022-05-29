@@ -76,7 +76,7 @@ u1-ico[state=failed]:before {
 }
 
 /*
-chrome does not need :after-trick (why?) , but ff
+chrome does not need :after-trick (why? => because it uses segoe ui symbol as font?) , but ff
 not working in safari :(
 *
 u1-ico:after {
