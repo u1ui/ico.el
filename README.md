@@ -1,6 +1,13 @@
 # &lt;u1-ico&gt;
 Universal Icon-Element
 
+## Features
+
+- Use any icon set you want
+- You can put direct SVG inside the element
+- You can use a icon-font
+- Or you define a directory, where the svg-files are located
+
 ## Ussage
 
 ```html
