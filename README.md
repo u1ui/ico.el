@@ -45,7 +45,7 @@ html {
 
 ### Icon-naming
 We prefer to alwas use lowercase names for the icons and use the `-` as a separator. E.g. `arrow-right`.  
-But if your prefered Icon-Set uses other naming conventions, you can use the placeholder `{icon-name}` in the same form as the Iconset's files are named: 
+But if your prefered Icon-Set uses other naming conventions, you can use the placeholder `{icon-name}` in the same form as the Iconset's files are named:   
 `{iconName}` => first word is lowercase, second word is uppercase and there is no separator.
 
 ```css
