@@ -72,6 +72,12 @@ html {
 
 Note: `--u1-ico-dir` is stronger then `--u1-ico-font`.
 
+## Variant "SVG":
+
+Just put you svg inside the element:
+```html
+<u1-ico><svg>...</svg></u1-ico>
+```
 
 ## Demos
 https://raw.githack.com/u1ui/ico.el/main/tests/emojis.html  
