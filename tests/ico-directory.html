@@ -56,7 +56,7 @@
     </style>
 
     <script type=module>
-        let fonts = {
+        let directories = {
             'Material':            'https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.11/svg/{icon}/baseline.svg',
             'Teenyicons':          'https://cdn.jsdelivr.net/npm/teenyicons@0.4.1/outline/',
             'Feather':             'https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/icons/',
@@ -110,7 +110,7 @@
             }
             str += '<tbody>';
 
-            for (let [set,url] of Object.entries(fonts)) {
+            for (let [set,url] of Object.entries(directories)) {
                 let link = url.split(/{icon.*}/i)[0];
                 str +=
                 `<tr style="--u1-ico-dir:'${url}';">
