@@ -1,5 +1,12 @@
 # &lt;u1-ico&gt;
-Universal Icon-Element
+🥐 Universal Icon-Element
+
+## Features
+
+- Use any icon set you want
+- You can put direct SVG inside the element
+- You can use a icon-font
+- Or you define a directory, where the svg-files are located
 
 ## Ussage
 
@@ -38,7 +45,7 @@ html {
 
 ### Icon-naming
 We prefer to alwas use lowercase names for the icons and use the `-` as a separator. E.g. `arrow-right`.  
-But if your prefered Icon-Set uses other naming conventions, you can use the placeholder `{icon-name}` in the same form as the Iconset's naming convention: 
+But if your prefered Icon-Set uses other naming conventions, you can use the placeholder `{icon-name}` in the same form as the Iconset's files are named:   
 `{iconName}` => first word is lowercase, second word is uppercase and there is no separator.
 
 ```css
@@ -65,6 +72,12 @@ html {
 
 Note: `--u1-ico-dir` is stronger then `--u1-ico-font`.
 
+## Variant "SVG":
+
+Just put you svg inside the element:
+```html
+<u1-ico><svg>...</svg></u1-ico>
+```
 
 ## Demos
 https://raw.githack.com/u1ui/ico.el/main/tests/emojis.html  
