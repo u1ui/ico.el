@@ -1,5 +1,5 @@
-# &lt;u1-ico&gt;
-🥐 Universal Icon-Element
+# 🥐 &lt;u1-ico&gt;
+Universal Icon-Element
 
 ## Features
 
