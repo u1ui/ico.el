@@ -1,5 +1,5 @@
-# &lt;u1-ico&gt; - element
-Universal icon-element
+# 🥐 &lt;u1-ico&gt;
+Universal Icon-Element
 
 ## Features
 
@@ -11,8 +11,21 @@ Universal icon-element
 ## Ussage
 
 ```html
-<u1-ico icon="book">Alt text</u1-ico>
-<u1-ico>star</u1-ico>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/u1ui/ico.el@x.x.x/ico.css">
+<scrip src="https://cdn.jsdelivr.net/gh/u1ui/ico.el@x/ico.js"></script>
+
+<style>
+html {
+    --u1-ico-dir:'https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.11/svg/{icon-name}/baseline.svg';
+}
+u1-ico {
+    font-size: 1rem;
+    color: blue;
+}
+</style>
+
+<u1-ico>star</u1-ico> <!-- visible for screenreaders -->
+<u1-ico icon="star"></u1-ico> <!-- not visible for screenreaders -->
 ```
 
 ## Variant "icon-directory"
@@ -41,6 +54,7 @@ html {
 }
 ```
 
+
 ## Variant "icon-font":
 
 Define the font used for the icons:
@@ -66,28 +80,8 @@ Just put you svg inside the element:
 ```
 
 ## Demos
-
-https://raw.githack.com/u1ui/ico.el/main/tests/emojis.html  
-https://raw.githack.com/u1ui/ico.el/main/tests/ico-directory.html  
-https://raw.githack.com/u1ui/ico.el/main/tests/minimal.html  
-https://raw.githack.com/u1ui/ico.el/main/tests/test.html
-
-## Install
-
-```html
-<link href="https://cdn.jsdelivr.net/gh/u1ui/ico.el@3.0.0/ico.min.css" rel=stylesheet>
-<script src="https://cdn.jsdelivr.net/gh/u1ui/ico.el@3.0.0/ico.min.js" type=module>
-```
-
-## Demo
-
 https://raw.githack.com/u1ui/ico.el/main/tests/emojis.html  
 https://raw.githack.com/u1ui/ico.el/main/tests/ico-directory.html  
 https://raw.githack.com/u1ui/ico.el/main/tests/minimal.html  
 https://raw.githack.com/u1ui/ico.el/main/tests/test.html  
-
-## About
-
-- MIT License, Copyright (c) 2022 <u1> (like all repositories in this organization) <br>
-- Suggestions, ideas, finding bugs and making pull requests make us very happy. ♥
 
