@@ -15,6 +15,20 @@ Universal icon-element
 <u1-ico>star</u1-ico>
 ```
 
+## Install
+
+```html
+<link href="https://cdn.jsdelivr.net/gh/u1ui/ico.el@3.0.0/ico.min.css" rel=stylesheet>
+<script src="https://cdn.jsdelivr.net/gh/u1ui/ico.el@3.0.0/ico.min.js" type=module>
+```
+
+## Demos
+
+[emojis.html](https://raw.githack.com/u1ui/ico.el/main/tests/emojis.html)  
+[ico-directory.html](https://raw.githack.com/u1ui/ico.el/main/tests/ico-directory.html)  
+[minimal.html](https://raw.githack.com/u1ui/ico.el/main/tests/minimal.html)  
+[test.html](https://raw.githack.com/u1ui/ico.el/main/tests/test.html)  
+
 ## Variant "icon-directory"
 
 Use the css-property `-u1-ico-dir:https://x.y/icons-directory/` to define where the icons are located.  
@@ -64,27 +78,6 @@ Just put you svg inside the element:
 ```html
 <u1-ico><svg>...</svg></u1-ico>
 ```
-
-## Demos
-
-https://raw.githack.com/u1ui/ico.el/main/tests/emojis.html  
-https://raw.githack.com/u1ui/ico.el/main/tests/ico-directory.html  
-https://raw.githack.com/u1ui/ico.el/main/tests/minimal.html  
-https://raw.githack.com/u1ui/ico.el/main/tests/test.html
-
-## Install
-
-```html
-<link href="https://cdn.jsdelivr.net/gh/u1ui/ico.el@3.0.0/ico.min.css" rel=stylesheet>
-<script src="https://cdn.jsdelivr.net/gh/u1ui/ico.el@3.0.0/ico.min.js" type=module>
-```
-
-## Demo
-
-https://raw.githack.com/u1ui/ico.el/main/tests/emojis.html  
-https://raw.githack.com/u1ui/ico.el/main/tests/ico-directory.html  
-https://raw.githack.com/u1ui/ico.el/main/tests/minimal.html  
-https://raw.githack.com/u1ui/ico.el/main/tests/test.html  
 
 ## About
 
