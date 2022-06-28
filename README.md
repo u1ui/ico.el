@@ -41,7 +41,6 @@ u1-ico {
 
 Use the css-property `-u1-ico-dir:https://x.y/icons-directory/` to define where the icons are located.  
 The value must be in quotes.  
-See the demo ico-directory.html for working icon-sets
 
 ### Placeholder "{icon}"
 
@@ -51,7 +50,6 @@ html {
     --u1-ico-dir:'https://x.y/24x-{icon}/baseline.svg';
 }
 ```
-
 
 ### Icon-naming
 We prefer to alwas use lowercase names for the icons and use the `-` as a separator. E.g. `arrow-right`.  
@@ -65,6 +63,9 @@ html {
 ```
 
 ### Some icon sets
+
+See it in action:
+[ico-directory.html](https://raw.githack.com/u1ui/ico.el/main/tests/ico-directory.html)
 
 | Icon set | Directory |
 | -------- | --------- |
