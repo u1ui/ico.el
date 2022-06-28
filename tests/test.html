@@ -3,32 +3,29 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
+        <!--script src="../../u1/tests/test-init.js" type=module></script-->
         <title>u1-ico Test</title>
 
         <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/norm.css/norm.min.css">
-        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/norm.css/beta.min.css">
         <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/base.min.css">
-        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/beta.min.css">
         <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/variables.min.css">
         <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/classless.min.css">
         <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/simple.min.css">
         <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/more.min.css">
 
-        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/print.min.css" media=print>
-        <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/base.css/nomotion.min.css" media=prefers-reduced-motion>
+        <link rel="stylesheet" href="./util.css">
+        <script type=module src="./util.js"></script>
 
-
-
-        <!--link rel="stylesheet" href="../font/Material Icons.css">
+        <link rel="stylesheet" href="../font/Material Icons.css">
         <link rel="stylesheet" href="../font/LigatureSymbols.css">
         <link rel="stylesheet" href="../font/RemixFilled.css">
         <link rel="stylesheet" href="../font/RemixOutlined.css">
         <link rel="stylesheet" href="../font/Font Awesome.css">
-        <link rel="stylesheet" href="../ico.css"-->
 
-        <link rel="stylesheet" href="./util.css">
+
+        <link rel="stylesheet" href="../ico.css">
         <script type=module src="../ico.js"></script>
-        <script type=module src="./util.js"></script>
+
 <body>
 
 <label>
@@ -100,7 +97,7 @@
             <td>✓
             <td>3
         <tr>
-            <td>UTF-8 (🔍):
+            <td>UTF-8 (🔍) beta:
             <td>
                 <u1-ico icon="🔍" aria-label="search"></u1-ico>
                 <u1-ico>🔍</u1-ico>
@@ -198,53 +195,7 @@
     </div>
 </div>
 
-<h2>Inline</h2>
-<div style="display:flex; gap:.1rem" id=inline-test>
-    <style>
-    #inline-test u1-ico { border: 0; }
-    </style>
-    <div style="flex:1 1 200px">
-        <p id=inlineTextP>
-            Line-Height should be > 1.1<br>
-            Material Icons Font:
-            <div style="--u1-ico-font:'Material Icons'">
-            <script>
-                for (let icon of 'star,add,clear,call,snowboarding'.split(',')) {
-                    document.write('<u1-ico inline font=material>'+icon+'</u1-ico> ('+icon+') ');
-                }
-                document.currentScript.remove();
-            </script>
-            </div>
-            Remixicon Font:
-            <div style="--u1-ico-font:'RemixOutlined'">
-            <script>
-                for (let icon of 'star,heart,home,file,key,sun'.split(',')) {
-                    document.write('<u1-ico inline>'+icon+'</u1-ico> ('+icon+') ');
-                }
-                document.currentScript.remove();
-            </script>
-            </div>
-            LigatureSymbols Font:
-            <div style="--u1-ico-font:'LigatureSymbols'">
-            <script>
-                for (let icon of 'star,heart,home,file,key,sun'.split(',')) {
-                    document.write('<u1-ico inline>'+icon+'</u1-ico> ('+icon+') ');
-                }
-                document.currentScript.remove();
-            </script>
-            </div>
-        </p>
-        <hr>
-    </div>
-    <div style="flex:1 1 200px">
-        <p>
-            <script>
-                document.write(inlineTextP.innerHTML.replace(/<u1-ico[^<]*<\/u1-ico>/g,'iii'));
-            </script>
-        </p>
-        <hr>
-    </div>
-</div>
+
 <h2>Vertical alignement</h2>
 <div style="--u1-ico-font:'Material Icons'">
     <h3>Using [inline]</h3>
@@ -260,25 +211,4 @@
     Vertical-align middle: <u1-ico style="vertical-align:middle;" >star</u1-ico><br>
     Vertical-align text-bottom: <u1-ico style="vertical-align:text-bottom;" >star</u1-ico><br>
     Vertical-align bottom: <u1-ico style="vertical-align:bottom;" >star</u1-ico><br>
-</div>
-
-<h2>Styled</h2>
-<div style="--u1-ico-font:'Material Icons'">
-    <u1-ico class=styled>star</u1-ico>
-
-<style style="display:block;" contenteditable>
-    .styled {
-        padding:1rem;
-        border:3px solid;
-        border-radius:.5em;
-        background:#777;
-        color:#5af;
-        transition:transform .9s, color .8s;
-    }
-    .styled:hover {
-        color:greenyellow;
-        transform:rotate(180deg);
-    }
-</style>
-
 </div>
