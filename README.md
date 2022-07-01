@@ -17,7 +17,7 @@ Universal icon-element
 
 ```css
 u1-ico {
-    --u1-ico-dir: 'https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.11/svg/{icon}/baseline.svg';
+    --u1-ico-dir: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/icons/';
     color:darkblue;
     font-size:2rem;
 }
@@ -32,10 +32,10 @@ u1-ico {
 
 ## Demos
 
-[emojis.html](https://raw.githack.com/u1ui/ico.el/main/tests/emojis.html)  
-[ico-directory.html](https://raw.githack.com/u1ui/ico.el/main/tests/ico-directory.html)  
-[minimal.html](https://raw.githack.com/u1ui/ico.el/main/tests/minimal.html)  
-[test.html](https://raw.githack.com/u1ui/ico.el/main/tests/test.html)  
+[emojis.html](http://gcdn.li/u1ui/ico.el@main/tests/emojis.html)  
+[ico-directory.html](http://gcdn.li/u1ui/ico.el@main/tests/ico-directory.html)  
+[minimal.html](http://gcdn.li/u1ui/ico.el@main/tests/minimal.html)  
+[test.html](http://gcdn.li/u1ui/ico.el@main/tests/test.html)  
 
 ## Variant "icon-directory"
 
@@ -138,3 +138,4 @@ Just put you svg inside the element:
 
 - MIT License, Copyright (c) 2022 <u1> (like all repositories in this organization) <br>
 - Suggestions, ideas, finding bugs and making pull requests make us very happy. ♥
+
