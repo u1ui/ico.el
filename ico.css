@@ -32,10 +32,13 @@ u1-ico[icon]:before { /* todo if supported: :where([icon]::before) { */
 }
 
 
-html { /* use utf8-icons as default */
+html {
+  /* use utf8-icons as default */
+  /* see test/emojis.html for unicode emojis */
   /*--u1-ico-font:sans-serif;*/
   --u1-ico-font:'Segoe UI Symbol', 'Noto Emoji', sans-serif; /* noto on linux? */
 }
+
 
 /* inline */
 u1-ico[inline] {
@@ -49,8 +52,10 @@ u1-ico[inline] {
 
 /* js loaded icons */
 u1-ico > svg {
+  /*
   xdisplay:block;
   xvertical-align:middle;
+  */
   vertical-align:bottom;
   height:1em;
   width:auto;
@@ -64,6 +69,7 @@ u1-ico[state]:before,
 u1-ico[state]:after {
   display:none;
 }
+/*
 u1-ico[state] > svg {
   xdisplay:block;
   xheight:1em;
@@ -71,27 +77,7 @@ u1-ico[state] > svg {
   xoverflow:visible;
   xmargin:auto;
 }
+*/
 u1-ico[state=failed]:before {
   display:block;
 }
-
-/*
-chrome does not need :after-trick (why? => because it uses segoe ui symbol as font?) , but ff
-not working in safari :(
-*
-u1-ico:after {
-  content: "\00FE0E";
-  font:inherit;
-  /* for safari (it displays a stupid rect) *
-  opacity:0;
-}
-/*
-proposed features to archive monochrome icons
-u1-ico {
-  text-transform: text;           /* proposed *
-  font-variant-emoji: text;       /* proposed *
-  font-variant-color: monochrome; /* proposed *
-  font-color: monochrome;         /* proposed *
-  font-palette: dark;             /* drafted for CSS Fonts Level 4 *
-}
-*/
