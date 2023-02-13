@@ -26,8 +26,8 @@ u1-ico {
 ## Install
 
 ```html
-<link href="https://cdn.jsdelivr.net/gh/u1ui/ico.el@3.2.0/ico.min.css" rel=stylesheet>
-<script src="https://cdn.jsdelivr.net/gh/u1ui/ico.el@3.2.0/ico.min.js" type=module>
+<link href="https://cdn.jsdelivr.net/gh/u1ui/ico.el@x.x.x/ico.min.css" rel=stylesheet>
+<script src="https://cdn.jsdelivr.net/gh/u1ui/ico.el@x.x.x/ico.min.js" type=module>
 ```
 
 ## Demos
