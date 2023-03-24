@@ -66,6 +66,9 @@ u1-ico > svg {
 u1-ico path[fill]:not([fill=none]) { /* use currentColor if "fill" is to be filled */
   fill:currentColor;
 }
+u1-ico path[stroke]:not([stroke="none"]) {
+  stroke: currentColor;
+}
 
 /* */
 u1-ico[state]:before,
