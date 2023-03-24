@@ -67,8 +67,8 @@ html {
 See it in action:
 [ico-directory.html](https://raw.githack.com/u1ui/ico.el/main/tests/ico-directory.html)
 
-| Icon set | Directory |
-| -------- | --------- |
+| Icon set   | Directory |
+| --------   | --------- |
 | Material                  | `https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.11/svg/{icon_name}/baseline.svg` |
 | Teenyicons                | `https://cdn.jsdelivr.net/npm/teenyicons@0.4.1/outline/` |
 | Feather                   | `https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/icons/` |
@@ -76,6 +76,7 @@ See it in action:
 | Octicons                  | `https://cdn.jsdelivr.net/npm/octicons@8.5.0/build/svg/` |
 | Bytesize                  | `https://cdn.jsdelivr.net/npm/bytesize-icons@1.4.0/dist/icons/` |
 | Ionicons                  | `https://cdn.jsdelivr.net/npm/ionicons@5.5.1/dist/svg/` |
+| Tabler Icons              | `https://cdn.jsdelivr.net/npm/tabler-icons@1.35.0/icons/` |
 | Fontawesome regular       | `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/svgs/regular/` |
 | Fontawesome solid         | `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/svgs/solid/` |
 | Fontawesome brands        | `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/svgs/brands/` |
@@ -95,7 +96,6 @@ See it in action:
 | Eva Icons fill            | `https://cdn.jsdelivr.net/npm/eva-icons@1.1.3/fill/svg/` |
 | Eva Icons outline         | `https://cdn.jsdelivr.net/npm/eva-icons@1.1.3/outline/svg/{icon}-outline.svg` |
 | Zondicons                 | `https://cdn.jsdelivr.net/npm/zondicons@1.2.0/` |
-| Tabler Icons              | `https://cdn.jsdelivr.net/npm/tabler-icons@1.35.0/icons/` |
 | holasvg-icons             | `https://cdn.jsdelivr.net/gh/marianabeldi/holasvg-icons/icons/` |
 | Jam icons                 | `https://cdn.jsdelivr.net/gh/michaelampr/jam@3.1.0/icons/` |
 | entypo                    | `https://cdn.jsdelivr.net/npm/entypo@2.2.1/src/Entypo/` |
@@ -138,4 +138,3 @@ Just put you svg inside the element:
 
 - MIT License, Copyright (c) 2022 <u1> (like all repositories in this organization) <br>
 - Suggestions, ideas, finding bugs and making pull requests make us very happy. ♥
-

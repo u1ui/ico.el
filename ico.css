@@ -63,6 +63,9 @@ u1-ico > svg {
   overflow:visible;
   margin:auto;
 }
+u1-ico path[fill]:not([fill=none]) { /* use currentColor if "fill" is to be filled */
+  fill:currentColor;
+}
 
 /* */
 u1-ico[state]:before,
