@@ -17,7 +17,7 @@ Universal icon-element
 
 ```css
 u1-ico {
-    --u1-ico-dir: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/icons/';
+    --u1-ico-dir: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/icons/';
     color:darkblue;
     font-size:2rem;
 }
@@ -138,3 +138,4 @@ Just put you svg inside the element:
 
 - MIT License, Copyright (c) 2022 <u1> (like all repositories in this organization) <br>
 - Suggestions, ideas, finding bugs and making pull requests make us very happy. ♥
+
