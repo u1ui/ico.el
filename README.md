@@ -39,7 +39,7 @@ u1-ico {
 
 ## Variant "icon-directory"
 
-Use the css-property `-u1-ico-dir:https://x.y/icons-directory/` to define where the icons are located.  
+Use the css-property `--u1-ico-dir:https://x.y/icons-directory/` to define where the icons are located.  
 The value must be in quotes.  
 
 ### Placeholder "{icon}"
