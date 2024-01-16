@@ -27,7 +27,7 @@ u1-ico {
 
 ```html
 <link href="https://cdn.jsdelivr.net/gh/u1ui/ico.el@x.x.x/ico.min.css" rel=stylesheet>
-<script src="https://cdn.jsdelivr.net/gh/u1ui/ico.el@x.x.x/ico.min.js" type=module>
+<script src="https://cdn.jsdelivr.net/gh/u1ui/ico.el@x.x.x/ico.min.js" type=module></script>
 ```
 
 ## Demos
