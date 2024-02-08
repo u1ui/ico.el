@@ -1,6 +1,6 @@
 // icons from directory
 // [u1-ico] {
-//     --directory:'https://cdn.jsdelivr.net/npm/teenyicons@0.4.1/outline/';
+//     --u1-ico-dir:'https://cdn.jsdelivr.net/npm/teenyicons@0.4.1/outline/x-{icon-name}.svg';
 // }
 
 const uIco = class extends HTMLElement {
@@ -20,13 +20,14 @@ const uIco = class extends HTMLElement {
             const name = this.getAttribute('icon') || inner;
             this.setAttribute('icon',name);
 
-            let [prefix, firstWord, between='', nextWord, suffix='.svg'] = dir.split(/{(icon)([^n]*)?(name)?}/i);
+            let [prefix, firstWord, between='', nextWord, suffix] = dir.split(/{(icon)([^n]*)?(name)?}/i);
+            if (!suffix) suffix = '.svg';
             if (!nextWord) between = '-'; // if just: {icon}
 
-            // icon nameing convertion
+            // icon naming convertion
             let fileName = name;
-            const upperFirst = firstWord && firstWord[0] === 'I';
-            const upperWords = nextWord  && nextWord[0]  === 'N';
+            const upperFirst = firstWord?.[0] === 'I';
+            const upperWords = nextWord?.[0] === 'N';
             if (upperFirst) fileName = fileName.replace(/^([a-z])/, g => g[0].toUpperCase()); // first upper
             if (upperWords) fileName = fileName.replace(/-([a-z])/g, g => g[1].toUpperCase()); // camel-case
             if (between !== '-') fileName = fileName.replace(/-/g, between);
@@ -34,20 +35,24 @@ const uIco = class extends HTMLElement {
             const path = prefix + fileName + suffix;
 
             this.setAttribute('state','loading');
-            var svg = fetch(path, {cache: "force-cache"}).then(res=>{ // "force-cache": why is the response not cached like direct in the browser?
-                if (!res.ok) throw new Error("Not 2xx response (does the icon not exist?)");
-                res.text().then(svg=>{
+            fetch(path, {cache: "force-cache"}) // "force-cache": why is the response not cached like direct in the browser?
+                .then(res=>{
+                    if (!res.ok) throw new Error("Not 2xx response (does the icon not exist?)");
+                    return res.text();
+                })
+                .then(svg=>{
                     this.setAttribute('state','ok');
                     this.innerHTML = svg;
-
-                    if (inner) { // if the name was the content of the element, it was indened as a label
+                    if (inner) { // if the name was the content of the element, it was intended to be the label
                         this.firstElementChild.setAttribute('aria-label', inner);
+                    } else {
+                        this.firstElementChild.setAttribute('aria-hidden', 'true');
                     }
+                })
+                .catch(err=>{
+                    this.setAttribute('state','fail');
+                    // todo retry? console.warn('failed to load "' + fileName + '" in ' + prefix);
                 });
-            }).catch(err=>{
-                this.setAttribute('state','fail');
-                // todo retry? console.warn('failed to load "' + fileName + '" in ' + prefix);
-            });
         }
     }
 }
