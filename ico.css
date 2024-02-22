@@ -1,3 +1,7 @@
+html {
+  --u1-ico-font:'Segoe UI Symbol', 'Noto Emoji', sans-serif; /* noto on linux? */
+}
+
 u1-ico {
   font-weight: normal;
   font-style: normal;
@@ -8,10 +12,10 @@ u1-ico {
   overflow-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  -webkit-font-smoothing: antialiased; /* Support for all WebKit browsers. */
-  text-rendering: optimizeLegibility; /* Support for Safari and Chrome. */
-  -moz-osx-font-smoothing: grayscale; /* Support for Firefox. */
-  font-feature-settings: 'liga'; /* Support for IE. */
+  -webkit-font-smoothing: antialiased; /* all WebKit browsers. */
+  text-rendering: optimizeLegibility; /* Safari and Chrome. */
+  -moz-osx-font-smoothing: grayscale; /* Firefox. */
+  font-feature-settings: 'liga'; /* IE only? */
   font-family: var(--u1-ico-font) !important;
 
   fill:currentColor; /* for svg, dont use `u1-ico > svg { fill:currentColor }` because it can have the attribute fill="none" */
@@ -32,21 +36,13 @@ u1-ico[icon]:before { /* todo if supported: :where([icon]::before) { */
 }
 
 
-html {
-  /* use utf8-icons as default */
-  /* see test/emojis.html for unicode emojis */
-  /*--u1-ico-font:sans-serif;*/
-  --u1-ico-font:'Segoe UI Symbol', 'Noto Emoji', sans-serif; /* noto on linux? */
-}
-
 
 /* inline */
 u1-ico[inline] {
   overflow:visible;
   font-size:1em;
-  /* vertical-align: text-bottom; zzz */
   /*
-    beste option:
+    best option?:
     centering using font-relative units
     1ex support: good
     1cap support: only firefox
@@ -57,12 +53,8 @@ u1-ico[inline] {
   /* margin:auto;  todo: dont stretch if its a flex-item? */
 }
 
-/* js loaded icons */
+/* direct svg and js-loaded */
 u1-ico > svg {
-  /*
-  xdisplay:block;
-  xvertical-align:middle;
-  */
   vertical-align:bottom;
   height:1em;
   width:auto;
@@ -70,27 +62,20 @@ u1-ico > svg {
   overflow:visible;
   margin:auto;
 }
-u1-ico path[fill]:not([fill=none]) { /* use currentColor if "fill" is to be filled */
-  fill:currentColor;
-}
-u1-ico path[stroke]:not([stroke="none"]) {
-  stroke: currentColor;
-}
+u1-ico path[fill]:not([fill=none]) { fill:currentColor; }
+u1-ico path[stroke]:not([stroke=none]) { stroke: currentColor; }
 
-/* */
-u1-ico[state]:before,
-u1-ico[state]:after {
+
+/* dir-variant */
+u1-ico[state]:not([state=loaded]) { /* js, but not yet loaded */
+  overflow:clip;
+  width: 1em;
+  height: 1em;
+}
+u1-ico[state]:before {
   display:none;
 }
-/*
-u1-ico[state] > svg {
-  xdisplay:block;
-  xheight:1em;
-  xmin-width:1em;
-  xoverflow:visible;
-  xmargin:auto;
-}
-*/
-u1-ico[state=failed]:before {
+u1-ico[state=fail]:before { /* js, but failed to load */
   display:block;
 }
+

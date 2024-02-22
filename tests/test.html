@@ -14,7 +14,7 @@
         <link rel=stylesheet href="https://cdn.jsdelivr.net/gh/u1ui/classless.css/more.min.css">
 
         <link rel="stylesheet" href="./util.css">
-        <script type=module src="./util.js"></script>
+        <!--script type=module src="./util.js"></script-->
 
         <link rel="stylesheet" href="../font/Material Icons.css">
         <link rel="stylesheet" href="../font/LigatureSymbols.css">
@@ -78,7 +78,7 @@
         <tr style="--u1-ico-dir: 'https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.11/svg/{icon}/baseline.svg';" >
             <td>--u1-ico-dir
             <td>
-                <u1-ico icon="search" aria-label="search" aria-label="search"></u1-ico>
+                <u1-ico icon=search aria-label=search></u1-ico>
                 <u1-ico>search</u1-ico>
             <td>
             <td>
@@ -88,7 +88,7 @@
         <tr>
             <td>--u1-ico-font
             <td>
-                <u1-ico style="--u1-ico-font:Material Icons" icon="search" aria-label="search"></u1-ico>
+                <u1-ico style="--u1-ico-font:Material Icons" icon=search aria-label=search></u1-ico>
                 <u1-ico style="--u1-ico-font:Material Icons">search</u1-ico>
             <td>✓
             <td>
@@ -98,7 +98,7 @@
         <tr>
             <td>UTF-8 (🔍) beta:
             <td>
-                <u1-ico icon="🔍" aria-label="search"></u1-ico>
+                <u1-ico icon="🔍" aria-label=search></u1-ico>
                 <u1-ico>🔍</u1-ico>
             <td>✓
             <td>✓
@@ -137,11 +137,31 @@
         </u1-ico>
     </div>
     <div>
-        --u1-ico-dir, innerHTML
+        --u1-ico-font
         <u1-ico style="--u1-ico-font:Material Icons">
             search
         </u1-ico>
     </div>        
+    <div>
+        --u1-ico-dir, local (#icon)
+        <u1-ico style="--u1-ico-dir:'#icon-'" >
+            search
+        </u1-ico>
+
+        <div hidden>
+            <svg id=icon-search width="24" height="24" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg>
+        </div>
+    </div>  
+
+    <div>
+        --u1-ico-dir, external part (#icon)
+        <u1-ico style="--u1-ico-dir:'./util-multi.svg#'">
+            search
+        </u1-ico>
+        <u1-ico style="--u1-ico-dir:'./util-multi.svg#'">
+            star
+        </u1-ico>
+    </div>  
         
 </div>
 
@@ -158,7 +178,7 @@
     Vertical-align bottom: <u1-ico style="vertical-align:bottom" inline>star</u1-ico><br>
 
     <h3>Not using [inline]</h3>
-    Vertical-align initial: <u1-ico style="" >star</u1-ico><br>
+    Vertical-align initial: <u1-ico>star</u1-ico><br>
     Vertical-align baseline: <u1-ico style="vertical-align:baseline;" >star</u1-ico><br>
     Vertical-align middle: <u1-ico style="vertical-align:middle;" >star</u1-ico><br>
     Vertical-align text-bottom: <u1-ico style="vertical-align:text-bottom;" >star</u1-ico><br>

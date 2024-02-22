@@ -8,7 +8,7 @@ Universal icon-element
 - You can use a icon-font
 - Or you define a directory, where the svg-files are located
 
-## Ussage
+## Usage
 
 ```html
 <u1-ico icon="book">Alt text</u1-ico>
@@ -33,6 +33,7 @@ u1-ico {
 ## Demos
 
 [emojis.html](http://gcdn.li/u1ui/ico.el@main/tests/emojis.html)  
+[fonts.html](http://gcdn.li/u1ui/ico.el@main/tests/fonts.html)  
 [ico-directory.html](http://gcdn.li/u1ui/ico.el@main/tests/ico-directory.html)  
 [minimal.html](http://gcdn.li/u1ui/ico.el@main/tests/minimal.html)  
 [test.html](http://gcdn.li/u1ui/ico.el@main/tests/test.html)  
